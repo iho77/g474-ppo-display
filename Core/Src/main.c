@@ -42,6 +42,15 @@
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
 
+#define MS5837_ADDR      0x76
+
+#define CMD_RESET         0x1E
+#define CMD_ADC_READ      0x00
+#define CMD_PROM_READ_C1  0xA0
+#define CMD_CONV_D1_4096  0x40
+#define CMD_CONV_D2_4096  0x58
+
+
 // Display configuration (landscape orientation)
 #define LCD_H_RES       320
 #define LCD_V_RES       240
@@ -436,10 +445,14 @@ void HAL_I2C_MasterTxCpltCallback(I2C_HandleTypeDef *hi2c)
             break;
 
         case MS5837_FSM_D2_READ_TX:
-            /* ADC read command for D2 sent — start 3-byte DMA RX */
-            HAL_I2C_Master_Receive_DMA(hi2c,
-                (uint16_t)(MS5837_I2C_ADDR << 1), ms5837_rx_buf, 3U);
-            ms5837_fsm = MS5837_FSM_D2_READ_RX;
+            /* ADC read command for D2 sent — start 3-byte IT RX */
+            if (HAL_I2C_Master_Receive_IT(hi2c,
+                    (uint16_t)(MS5837_I2C_ADDR << 1), ms5837_rx_buf, 3U) == HAL_OK) {
+                ms5837_fsm = MS5837_FSM_D2_READ_RX;
+            } else {
+                ms5837_fsm = MS5837_FSM_IDLE;
+                ms5837_last_meas = g_ms;
+            }
             break;
 
         case MS5837_FSM_D1_CMD_TX:
@@ -449,10 +462,14 @@ void HAL_I2C_MasterTxCpltCallback(I2C_HandleTypeDef *hi2c)
             break;
 
         case MS5837_FSM_D1_READ_TX:
-            /* ADC read command for D1 sent — start 3-byte DMA RX */
-            HAL_I2C_Master_Receive_DMA(hi2c,
-                (uint16_t)(MS5837_I2C_ADDR << 1), ms5837_rx_buf, 3U);
-            ms5837_fsm = MS5837_FSM_D1_READ_RX;
+            /* ADC read command for D1 sent — start 3-byte IT RX */
+            if (HAL_I2C_Master_Receive_IT(hi2c,
+                    (uint16_t)(MS5837_I2C_ADDR << 1), ms5837_rx_buf, 3U) == HAL_OK) {
+                ms5837_fsm = MS5837_FSM_D1_READ_RX;
+            } else {
+                ms5837_fsm = MS5837_FSM_IDLE;
+                ms5837_last_meas = g_ms;
+            }
             break;
 
         default:
@@ -523,73 +540,40 @@ void HAL_I2C_ErrorCallback(I2C_HandleTypeDef *hi2c)
  * dbg_hal_err: hi2c1.ErrorCode at point of failure.
  *   0x04 = NACK (AF), 0x20 = timeout, 0x01 = bus error.
  */
-static void ms5837_diag_test(void)
-{
-    static volatile uint8_t  dbg_step    = 0;
-    static volatile uint32_t dbg_hal_err = 0;
-    static volatile uint16_t dbg_C[7]   = {0};
-    static volatile uint32_t dbg_D2     = 0;
-    static volatile uint32_t dbg_D1     = 0;
 
-    HAL_StatusTypeDef h;
-    uint8_t cmd;
-    uint8_t buf[3];
 
-#define DIAG_TX(c) \
-    cmd = (uint8_t)(c); \
-    h = HAL_I2C_Master_Transmit(&hi2c1, MS5837_I2C_ADDR << 1, &cmd, 1, 100); \
-    if (h != HAL_OK) { dbg_hal_err = hi2c1.ErrorCode; return; }
 
-#define DIAG_RX(dst, n) \
-    h = HAL_I2C_Master_Receive(&hi2c1, MS5837_I2C_ADDR << 1, buf, (n), 100); \
-    if (h != HAL_OK) { dbg_hal_err = hi2c1.ErrorCode; return; } \
-    (dst);
+volatile HAL_StatusTypeDef dbg_status;
+volatile uint32_t dbg_isr = 0;
+volatile uint32_t dbg_cr1 = 0;
+volatile uint32_t dbg_cr2 = 0;
+volatile uint32_t dbg_err = 0;   /* hi2c1.ErrorCode: 0x04=NACK, 0x20=timeout, 0x01=BERR, 0x02=ARLO */
+volatile uint16_t dbg_C1 = 0;
+volatile uint32_t dbg_D1 = 0;
+volatile uint32_t dbg_D2 = 0;
+volatile uint8_t  dbg_step = 0;
 
-    /* Reset */
-    DIAG_TX(MS5837_CMD_RESET);
-    HAL_Delay(5);
-    dbg_step = 1;
+void ms5837_i2c_bus_recover1(void) {
+    // 1. Force a hardware reset of the I2C1 peripheral core
+    __HAL_RCC_I2C1_FORCE_RESET();
 
-    /* PROM C[0..6] */
-    for (uint8_t i = 0; i < 7; i++) {
-        DIAG_TX(MS5837_CMD_PROM_READ + i * 2U);
-        h = HAL_I2C_Master_Receive(&hi2c1, MS5837_I2C_ADDR << 1, buf, 2, 100);
-        if (h != HAL_OK) { dbg_hal_err = hi2c1.ErrorCode; return; }
-        dbg_C[i] = ((uint16_t)buf[0] << 8) | buf[1];
+    // 2. Wait a fraction of a millisecond
+    HAL_Delay(1);
+
+    // 3. Release the reset
+    __HAL_RCC_I2C1_RELEASE_RESET();
+
+    // 4. Re-initialize the peripheral completely so the HAL state matches hardware
+    if (HAL_I2C_Init(&hi2c1) != HAL_OK) {
+        // Handle Init Error
     }
-    dbg_step = 2;
 
-    /* Convert D2 (temperature, OSR 4096) */
-    DIAG_TX(MS5837_CMD_CONV_D2 + MS5837_OSR_4096);
-    dbg_step = 3;
-    HAL_Delay(20);
-    dbg_step = 4;
-
-    /* ADC READ → D2 */
-    DIAG_TX(MS5837_CMD_ADC_READ);          /* send 0x00  */
-    dbg_step = 5;
-    h = HAL_I2C_Master_Receive(&hi2c1, MS5837_I2C_ADDR << 1, buf, 3, 100);
-    if (h != HAL_OK) { dbg_hal_err = hi2c1.ErrorCode; return; }
-    dbg_D2 = ((uint32_t)buf[0] << 16) | ((uint32_t)buf[1] << 8) | buf[2];
-    dbg_step = 6;
-
-    /* Convert D1 (pressure, OSR 4096) */
-    DIAG_TX(MS5837_CMD_CONV_D1 + MS5837_OSR_4096);
-    dbg_step = 7;
-    HAL_Delay(20);
-    dbg_step = 8;
-
-    /* ADC READ → D1 */
-    DIAG_TX(MS5837_CMD_ADC_READ);          /* send 0x00  */
-    dbg_step = 9;
-    h = HAL_I2C_Master_Receive(&hi2c1, MS5837_I2C_ADDR << 1, buf, 3, 100);
-    if (h != HAL_OK) { dbg_hal_err = hi2c1.ErrorCode; return; }
-    dbg_D1 = ((uint32_t)buf[0] << 16) | ((uint32_t)buf[1] << 8) | buf[2];
-    dbg_step = 10;  /* all steps passed — problem is in DMA/IT path only */
-
-#undef DIAG_TX
-#undef DIAG_RX
+    // Re-apply the noise filters here if they aren't inside HAL_I2C_Init
 }
+
+
+
+
 
 /* USER CODE END 0 */
 
@@ -677,7 +661,8 @@ int main(void)
 
   	sensor_init();
   	pressure_sensor_init();  // Initialize pressure sensor data structure
-  	ms5837_diag_test();
+
+
   	// Initialize MS5837 pressure sensor (blocking, one-time at boot — PROM only)
   	// First measurement comes from the DMA FSM within ~1s
   	if (ms5837_init(&hi2c1, &ms5837_calib, &ms5837_data) == MS5837_OK) {
@@ -1185,7 +1170,7 @@ static void MX_I2C1_Init(void)
 
   /* USER CODE END I2C1_Init 1 */
   hi2c1.Instance = I2C1;
-  hi2c1.Init.Timing = 0x00300617;
+  hi2c1.Init.Timing = 0x20B17DB6;
   hi2c1.Init.OwnAddress1 = 0;
   hi2c1.Init.AddressingMode = I2C_ADDRESSINGMODE_7BIT;
   hi2c1.Init.DualAddressMode = I2C_DUALADDRESS_DISABLE;

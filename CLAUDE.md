@@ -18,6 +18,7 @@ Operational procedures, guardrails, and limitations for Claude Code agents on th
 8. **NEVER** commit broken code or CRITICAL audit findings unaddressed
 9. **NEVER** modify or add code outside `USER CODE BEGIN` / `USER CODE END` blocks in CubeMX-generated files
 10. Avoid overcomplicated code with excessive error checking
+11. **NEVER** `rm -rf` a vendor directory without first listing its contents, comparing against upstream, moving any custom files to safety, and showing the user exactly what will be deleted
 
 ---
 

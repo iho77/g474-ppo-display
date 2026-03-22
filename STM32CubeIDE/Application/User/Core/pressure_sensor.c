@@ -99,7 +99,7 @@ void pressure_sensor_init(void)
 int32_t pressure_sensor_calculate_depth_mm(int32_t current_pressure_mbar, int32_t surface_pressure_mbar)
 {
     /* Calculate pressure difference (signed) */
-    int32_t delta_pressure_mbar = current_pressure_mbar - surface_pressure_mbar;
+    int32_t delta_pressure_mbar =  surface_pressure_mbar - current_pressure_mbar;
 
     /* Apply seawater depth formula with integer arithmetic */
     /* depth_mm = (delta_pressure_mbar × 995) / 100 */
