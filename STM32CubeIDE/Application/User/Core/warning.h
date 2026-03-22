@@ -45,10 +45,28 @@ void warning_apply_style(uint8_t sensor_index, warning_level_t level,
                          lv_obj_t* panel_obj, lv_obj_t* label_obj);
 
 /**
- * @brief Trigger vibration alert (STUB - future implementation)
- * @param level Warning level that triggered the alert
- * @note This is a placeholder for future hardware integration
+ * @brief Trigger vibration alert for the given warning level.
+ *        Call once per 1 Hz screen update with the highest active level.
+ *        Passing WARNING_NONE stops the motor and clears all state.
+ * @param level Highest active warning level across all sensors
  */
 void warning_trigger_vibration(warning_level_t level);
+
+/**
+ * @brief Advance the vibro state machine. Call every 5 ms from the scheduler.
+ */
+void vibro_tick_5ms(void);
+
+/**
+ * @brief Acknowledge (snooze) the active vibro warning.
+ *        Stops the motor immediately and suppresses re-trigger for the current
+ *        warning level until it changes. Call from BTN_M handler.
+ */
+void vibro_acknowledge(void);
+
+/**
+ * @brief Returns true while a vibro pattern is running (motor on or in a pause step).
+ */
+bool vibro_is_active(void);
 
 #endif // WARNING_H

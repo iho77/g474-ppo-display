@@ -36,19 +36,14 @@
 #include "drift_tracker.h"
 #include "ms5837.h"
 #include "w25q128.h"
+#include "warning.h"
 
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
 
-#define MS5837_ADDR      0x76
 
-#define CMD_RESET         0x1E
-#define CMD_ADC_READ      0x00
-#define CMD_PROM_READ_C1  0xA0
-#define CMD_CONV_D1_4096  0x40
-#define CMD_CONV_D2_4096  0x58
 
 
 // Display configuration (landscape orientation)
@@ -211,7 +206,7 @@ static void MX_TIM1_Init(void);
 static void MX_TIM6_Init(void);
 static void MX_TIM3_Init(void);
 /* USER CODE BEGIN PFP */
-
+void vibro_motor_test(void);
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
@@ -543,15 +538,7 @@ void HAL_I2C_ErrorCallback(I2C_HandleTypeDef *hi2c)
 
 
 
-volatile HAL_StatusTypeDef dbg_status;
-volatile uint32_t dbg_isr = 0;
-volatile uint32_t dbg_cr1 = 0;
-volatile uint32_t dbg_cr2 = 0;
-volatile uint32_t dbg_err = 0;   /* hi2c1.ErrorCode: 0x04=NACK, 0x20=timeout, 0x01=BERR, 0x02=ARLO */
-volatile uint16_t dbg_C1 = 0;
-volatile uint32_t dbg_D1 = 0;
-volatile uint32_t dbg_D2 = 0;
-volatile uint8_t  dbg_step = 0;
+
 
 void ms5837_i2c_bus_recover1(void) {
     // 1. Force a hardware reset of the I2C1 peripheral core
@@ -624,7 +611,8 @@ int main(void)
   MX_TIM3_Init();
   /* USER CODE BEGIN 2 */
 
-
+  /* DEBUG: uncomment to test vibro motor hardware before main loop */
+//  vibro_motor_test();
 
   // NOTE: Do NOT lock OPAMPs yet - need to change gain for offset calibration
 
@@ -752,6 +740,7 @@ int main(void)
 		if (atomic_exchange(&g_flag_5ms, false)) {
 
 			lv_timer_handler();
+			vibro_tick_5ms();
 
 		}
 
@@ -1760,6 +1749,48 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
+
+/**
+ * @brief Vibro motor hardware test — exercises PA0 (TIM5 CH1 PWM) at
+ *        various pulse lengths and duty cycles.
+ *        Call manually in USER CODE BEGIN 2 when debugging hardware.
+ *
+ * Timer maths: 96 MHz / (PSC+1=960) = 100 kHz tick; ARR+1=500 → 200 Hz PWM.
+ * CCR1 sets pulse width: CCR1/500 = duty cycle (0..499).
+ */
+void vibro_motor_test(void)
+{
+    /* 200 Hz PWM: 96 MHz / 960 / 500 = 200 Hz */
+    __HAL_TIM_SET_PRESCALER(&htim5, 959);
+    __HAL_TIM_SET_AUTORELOAD(&htim5, 499);
+
+    /* Short burst – 25% duty, 300 ms */
+    __HAL_TIM_SET_COMPARE(&htim5, TIM_CHANNEL_1, 124);
+    HAL_TIM_PWM_Start(&htim5, TIM_CHANNEL_1);
+    HAL_Delay(300);
+    HAL_TIM_PWM_Stop(&htim5, TIM_CHANNEL_1);
+    HAL_Delay(300);
+
+    /* Medium burst – 50% duty, 500 ms */
+    __HAL_TIM_SET_COMPARE(&htim5, TIM_CHANNEL_1, 249);
+    HAL_TIM_PWM_Start(&htim5, TIM_CHANNEL_1);
+    HAL_Delay(500);
+    HAL_TIM_PWM_Stop(&htim5, TIM_CHANNEL_1);
+    HAL_Delay(300);
+
+    /* Long burst – 75% duty, 800 ms */
+    __HAL_TIM_SET_COMPARE(&htim5, TIM_CHANNEL_1, 374);
+    HAL_TIM_PWM_Start(&htim5, TIM_CHANNEL_1);
+    HAL_Delay(800);
+    HAL_TIM_PWM_Stop(&htim5, TIM_CHANNEL_1);
+    HAL_Delay(300);
+
+    /* Full power – 99% duty, 1000 ms */
+    __HAL_TIM_SET_COMPARE(&htim5, TIM_CHANNEL_1, 494);
+    HAL_TIM_PWM_Start(&htim5, TIM_CHANNEL_1);
+    HAL_Delay(1000);
+    HAL_TIM_PWM_Stop(&htim5, TIM_CHANNEL_1);
+}
 
 /* USER CODE END 4 */
 

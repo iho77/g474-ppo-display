@@ -6,6 +6,7 @@
 #include "screen_manager.h"
 #include "lvgl.h"
 #include "button.h"
+#include "warning.h"
 
 // Forward declarations for custom button handlers
 void screen_main_on_action(btn_event_t evt);
@@ -92,6 +93,12 @@ void screen_manager_switch(screen_id_t id) {
 
 void screen_manager_handle_button(btn_event_t evt) {
     if (evt == BTN_NONE) {
+        return;
+    }
+
+    /* Vibro acknowledge: BTN_M silences an active vibro warning without other action */
+    if (evt == BTN_M_PRESS && vibro_is_active()) {
+        vibro_acknowledge();
         return;
     }
 

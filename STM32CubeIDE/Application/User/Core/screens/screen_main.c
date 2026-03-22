@@ -531,7 +531,8 @@ void screen_main_update(void) {
         delta_ppo = sensor_data.o2_s_ppo[SENSOR1] - sensor_data.o2_s_ppo[SENSOR2];
     }
 
-    // Loop through all 3 sensors
+    // Loop through all 3 sensors — collect highest warning level for vibro
+    warning_level_t highest_level = WARNING_NONE;
     for (int i = 0; i < 3; i++) {
         if (sensor_data.s_valid[i]) {
 
@@ -550,10 +551,7 @@ void screen_main_update(void) {
                                display_data[i][BRD_LBL],  // Panel for border
                                display_data[i][PPO_LBL]); // Label for text/bg
 
-            // Trigger vibration on critical warnings
-            if (level == WARNING_CRITICAL) {
-                warning_trigger_vibration(WARNING_CRITICAL);
-            }
+            if (level > highest_level) highest_level = level;
 
             // Update voltage in millivolts (assuming o2_s_uv is in microvolts)
             int32_t uv = sensor_data.o2_s_uv[i];
@@ -575,6 +573,8 @@ void screen_main_update(void) {
             lv_label_set_text(display_data[i][UV_LBL], "err");
         }
     }
+    // Trigger vibro for the most severe active warning across all sensors
+    warning_trigger_vibration(highest_level);
 
     // Display delta PPO with absolute value (avoid minus sign not in font)
     // Clamp to sane PPO range before abs to avoid INT32_MIN UB

@@ -57,7 +57,7 @@ void HAL_TIM_MspPostInit(TIM_HandleTypeDef *htim);
 void Error_Handler(void);
 
 /* USER CODE BEGIN EFP */
-
+extern TIM_HandleTypeDef htim5;  /* VIB_PWM (PA0) — vibro motor */
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
