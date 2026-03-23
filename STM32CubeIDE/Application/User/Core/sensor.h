@@ -117,9 +117,3 @@ int32_t filter_step_sensor_two_stage(sensor_id_t id, int32_t raw);
  *      Author: imele
  */
 
-#ifndef SENSOR_H_
-#define SENSOR_H_
-
-
-
-#endif /* SENSOR_H_ */

@@ -18,6 +18,8 @@ void calibrate_sensor(calibration_point p1, calibration_point p2, float *a, floa
 
 void calibrate_sensor(calibration_point p1, calibration_point p2, uint8_t SensorID) {
 
+	if (SensorID >= (SENSOR_COUNT - 2U)) return; /* bounds check: only 3 O2 sensors (indices 0-2) */
+
 	float a, b;
 
 	// CRITICAL: Validate denominator to prevent division by zero

@@ -42,7 +42,7 @@
 #define STABLE_THRESHOLD    3     // Max |y - b| difference in ADC counts
 #define STABLE_REQUIRED     50    // Consecutive stable samples needed (~5ms)
 #define MIN_WARMUP_STEPS    100  // Minimum samples before checking stability
-#define MAX_STABILITY_WAIT  0 // Timeout after warmup (~3s)
+#define MAX_STABILITY_WAIT  0 /* Intentionally 0 — no extra wait beyond MIN_WARMUP_STEPS */
 
 uint16_t steps[SENSOR_COUNT - 2];
 static uint16_t stable_count[SENSOR_COUNT - 2];  // Per-sensor stability counter
@@ -67,7 +67,7 @@ static bool startup = true;
 static inline int32_t median_int32(const int32_t *a, int n) {
 	_Static_assert(K <= 70, "K exceeds median_int32 buffer size (max 70)");
 
-	int32_t t[72];  // Buffer for sorting (initialized below, works for K up to 70)
+	int32_t t[72] = {0};  // Buffer for sorting (initialized below, works for K up to 70)
 	for (int i = 0; i < n; i++)
 		t[i] = a[i];  // Copy input array before in-place sort
 

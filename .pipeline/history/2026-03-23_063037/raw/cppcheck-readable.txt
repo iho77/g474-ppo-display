@@ -1,0 +1,258 @@
+Core/Src/main.c:255: [style] constParameterPointer: Parameter 'htim' can be declared as pointer to const
+Core/Src/main.c:303: [style] constParameterPointer: Parameter 'hadc' can be declared as pointer to const
+Core/Src/main.c:310: [style] constParameterPointer: Parameter 'hspi' can be declared as pointer to const
+Core/Src/main.c:513: [style] constParameterPointer: Parameter 'hi2c' can be declared as pointer to const
+Core/Src/stm32g4xx_hal_msp.c:802: [style] funcArgNamesDifferent: Function 'HAL_TIM_Base_MspInit' argument 1 names different: declaration 'htim' definition 'htim_base'.
+Core/Src/stm32g4xx_hal_msp.c:917: [style] funcArgNamesDifferent: Function 'HAL_TIM_Base_MspDeInit' argument 1 names different: declaration 'htim' definition 'htim_base'.
+Core/Src/stm32g4xx_hal_msp.c:431: [style] constParameterPointer: Parameter 'hi2c' can be declared as pointer to const
+Core/Src/stm32g4xx_hal_msp.c:491: [style] constParameterPointer: Parameter 'hi2c' can be declared as pointer to const
+Core/Src/stm32g4xx_hal_msp.c:525: [style] constParameterPointer: Parameter 'hopamp' can be declared as pointer to const
+Core/Src/stm32g4xx_hal_msp.c:594: [style] constParameterPointer: Parameter 'hopamp' can be declared as pointer to const
+Core/Src/stm32g4xx_hal_msp.c:802: [style] constParameterPointer: Parameter 'htim_base' can be declared as pointer to const
+Core/Src/stm32g4xx_hal_msp.c:865: [style] constParameterPointer: Parameter 'htim' can be declared as pointer to const
+Core/Src/stm32g4xx_hal_msp.c:917: [style] constParameterPointer: Parameter 'htim_base' can be declared as pointer to const
+STM32CubeIDE/Application/User/Core/ext_flash_storage.c:340: [style] knownConditionTrueFalse: Condition 'next_seq==0U' is always false
+STM32CubeIDE/Application/User/Core/ext_flash_storage.c:451: [style] knownConditionTrueFalse: Condition 'next_seq==0U' is always false
+STM32CubeIDE/Application/User/Core/screens/screen_calibration.c:66: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_calibration.c:67: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_calibration.c:68: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_calibration.c:77: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_calibration.c:78: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_calibration.c:79: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_calibration.c:80: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_calibration.c:81: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_calibration.c:90: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_calibration.c:91: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_calibration.c:92: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_calibration.c:93: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_calibration.c:94: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_calibration.c:103: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_calibration.c:104: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_calibration.c:105: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_calibration.c:114: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_calibration.c:115: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_calibration.c:116: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_calibration.c:125: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_calibration.c:126: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_calibration.c:127: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_calibration.c:137: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_calibration.c:138: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_calibration.c:139: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_calibration.c:148: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_calibration.c:149: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_calibration.c:150: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_calibration.c:160: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_calibration.c:161: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_calibration.c:162: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_calibration.c:172: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_calibration.c:173: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_calibration.c:174: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_calibration.c:184: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_calibration.c:185: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_calibration.c:186: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_calibration.c:198: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_calibration.c:199: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_calibration.c:200: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_calibration.c:210: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_calibration.c:211: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_calibration.c:212: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_calibration.c:222: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_calibration.c:223: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_calibration.c:224: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_calibration.c:234: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_calibration.c:235: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_calibration.c:236: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_calibration.c:246: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_calibration.c:247: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_calibration.c:248: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_calibration.c:258: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_calibration.c:259: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_calibration.c:260: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_calibration.c:269: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_calibration.c:270: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_calibration.c:271: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_calibration.c:280: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_calibration.c:281: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_calibration.c:282: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_calibration.c:291: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_calibration.c:292: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_calibration.c:293: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_calibration.c:303: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_calibration.c:304: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_calibration.c:305: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_calibration.c:482: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_calibration.c:483: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:649: [style] knownConditionTrueFalse: Condition 'num_sensors>3' is always false
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:95: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:96: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:97: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:106: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:107: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:108: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:117: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:118: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:119: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:128: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:129: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:130: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:139: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:140: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:141: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:150: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:151: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:152: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:161: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:162: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:163: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:172: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:173: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:174: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:183: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:184: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:193: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:194: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:195: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:204: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:205: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:206: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:215: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:216: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:217: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:227: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:228: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:237: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:238: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:239: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:240: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:249: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:250: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:251: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:260: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:261: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:262: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:271: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:272: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:273: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:282: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:283: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:284: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:293: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:294: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:295: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:304: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:305: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:306: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:315: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:316: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:317: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:326: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:327: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:328: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:337: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:338: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:339: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:348: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:349: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:350: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:359: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:360: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:361: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:362: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:363: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:370: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:371: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:372: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:381: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:382: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:383: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:384: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:385: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:392: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:393: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:394: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:403: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:404: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:405: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:406: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:407: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:414: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:415: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:416: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:447: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:448: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:454: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:455: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:457: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:458: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:461: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:462: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:464: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:465: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:470: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:471: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:473: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:474: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:490: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:491: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:563: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:569: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:570: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:571: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:590: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:592: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:676: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:678: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:680: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:685: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:735: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:736: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:737: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:740: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:741: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:746: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:747: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:793: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:795: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_main.c:797: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_menu.c:58: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_menu.c:59: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_menu.c:60: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_menu.c:69: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_menu.c:70: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_menu.c:71: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_menu.c:80: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_menu.c:81: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_menu.c:82: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_menu.c:91: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_menu.c:92: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_menu.c:93: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_menu.c:102: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_menu.c:103: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_menu.c:104: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_menu.c:136: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/screens/screen_menu.c:137: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/sensor.c:104: [warning] uninitvar: Uninitialized variable: d
+STM32CubeIDE/Application/User/Core/st7789v.c:42: [style] constVariable: Variable 'param_madctl' can be declared as const array
+STM32CubeIDE/Application/User/Core/st7789v.c:43: [style] constVariable: Variable 'param_colmod' can be declared as const array
+STM32CubeIDE/Application/User/Core/st7789v.c:44: [style] constVariable: Variable 'param_porctrl' can be declared as const array
+STM32CubeIDE/Application/User/Core/st7789v.c:45: [style] constVariable: Variable 'param_gctrl' can be declared as const array
+STM32CubeIDE/Application/User/Core/st7789v.c:46: [style] constVariable: Variable 'param_vcoms' can be declared as const array
+STM32CubeIDE/Application/User/Core/st7789v.c:47: [style] constVariable: Variable 'param_lcmctrl' can be declared as const array
+STM32CubeIDE/Application/User/Core/st7789v.c:48: [style] constVariable: Variable 'param_vdvvrhen' can be declared as const array
+STM32CubeIDE/Application/User/Core/st7789v.c:49: [style] constVariable: Variable 'param_vrhs' can be declared as const array
+STM32CubeIDE/Application/User/Core/st7789v.c:50: [style] constVariable: Variable 'param_vdvs' can be declared as const array
+STM32CubeIDE/Application/User/Core/st7789v.c:51: [style] constVariable: Variable 'param_frctrl2' can be declared as const array
+STM32CubeIDE/Application/User/Core/st7789v.c:52: [style] constVariable: Variable 'param_pwctrl1' can be declared as const array
+STM32CubeIDE/Application/User/Core/st7789v.c:53: [style] constVariable: Variable 'param_pvgam' can be declared as const array
+STM32CubeIDE/Application/User/Core/st7789v.c:57: [style] constVariable: Variable 'param_nvgam' can be declared as const array
+STM32CubeIDE/Application/User/Core/st7789v.c:98: [style] constVariable: Variable 'caset_data' can be declared as const array
+STM32CubeIDE/Application/User/Core/st7789v.c:104: [style] constVariable: Variable 'raset_data' can be declared as const array
+STM32CubeIDE/Application/User/Core/syscalls.c:80: [style] constParameterPointer: Parameter 'ptr' can be declared as pointer to const
+STM32CubeIDE/Application/User/Core/w25q128.c:20: [style] constParameterPointer: Parameter 'buf' can be declared as pointer to const
+STM32CubeIDE/Application/User/Core/w25q128.c:111: [style] constVariable: Variable 'tx' can be declared as const array
+STM32CubeIDE/Application/User/Core/warning.c:301: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/warning.c:303: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/warning.c:305: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/warning.c:311: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/warning.c:313: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.
+STM32CubeIDE/Application/User/Core/warning.c:315: [style] knownConditionTrueFalse: Same expression on both sides of '|' because 'LV_PART_MAIN' and 'LV_STATE_DEFAULT' represent the same value.

@@ -69,9 +69,10 @@ void button_tick(void) {
 }
 
 btn_event_t button_get_event(void) {
-    // Atomically read and clear the pending event
+    __disable_irq();
     btn_event_t evt = pending_event;
     pending_event = BTN_NONE;
+    __enable_irq();
     return evt;
 }
 

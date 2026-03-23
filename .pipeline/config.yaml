@@ -1,0 +1,43 @@
+# STM32G4 Static Analysis Pipeline Configuration
+# Project: PPO Display - Closed-circuit rebreather PPO2 monitor
+# MCU: STM32G431KB (Cortex-M4F)
+
+project:
+  name: ppo_display
+  mcu: STM32G474
+  family: STM32G4xx
+  core: cortex-m4
+
+paths:
+  project_root: "G:\\stm\\stm32g474_PPO_Display"
+  toolchain: "G:\\stm\\STM32CubeCLT_1.19.0\\GNU-tools-for-STM32"
+  
+  # Source directories to analyze
+  source_dirs:
+    - Core/Src
+    - STM32CubeIDE/Application/User/Core
+    - STM32CubeIDE/Application/User/Core/screens
+   
+  # Include directories for tool accuracy
+  include_dirs:
+    - Core/Inc
+    - STM32CubeIDE/Application/User/Core
+    - Drivers/STM32G4xx_HAL_Driver/Inc
+    - Drivers/CMSIS/Device/ST/STM32G4xx/Include
+    - Drivers/CMSIS/Include
+    - STM32CubeIDE/Drivers
+    - STM32CubeIDE/Drivers/lvgl
+
+  # Directories to skip during analysis
+  exclude_dirs:
+    - Drivers/STM32G4xx_HAL_Driver/Src
+    - Drivers/CMSIS
+
+defines:
+  - STM32G474xx
+  - USE_HAL_DRIVER
+
+thresholds:
+  complexity_ccn: 15
+  function_length: 75
+  max_arguments: 6

@@ -107,7 +107,6 @@ lv_obj_t* screen_sensor_data_create(void) {
 void screen_sensor_data_update(void) {
     if (lbl_s1_raw == NULL) return;
 
-    extern volatile sensor_data_t sensor_data;
     extern uint32_t vref_effective_mv;
     static char buf[80];  // Static to avoid dangling pointer during LVGL refresh
 

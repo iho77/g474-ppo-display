@@ -1,0 +1,119 @@
+Flawfinder version 2.0.19, (C) 2001-2019 David A. Wheeler.
+Number of rules (primarily dangerous function names) in C/C++ ruleset: 222
+Examining /firmware/Core/Src/main.c
+Examining /firmware/Core/Src/stm32g4xx_hal_msp.c
+Examining /firmware/Core/Src/stm32g4xx_it.c
+Examining /firmware/Core/Src/system_stm32g4xx.c
+Examining /firmware/STM32CubeIDE/Application/User/Core/button.c
+Examining /firmware/STM32CubeIDE/Application/User/Core/button.h
+Examining /firmware/STM32CubeIDE/Application/User/Core/calibration.c
+Examining /firmware/STM32CubeIDE/Application/User/Core/calibration.h
+Examining /firmware/STM32CubeIDE/Application/User/Core/drift_tracker.c
+Examining /firmware/STM32CubeIDE/Application/User/Core/drift_tracker.h
+Examining /firmware/STM32CubeIDE/Application/User/Core/ext_flash_storage.c
+Examining /firmware/STM32CubeIDE/Application/User/Core/ext_flash_storage.h
+Examining /firmware/STM32CubeIDE/Application/User/Core/flash_storage.c
+Examining /firmware/STM32CubeIDE/Application/User/Core/flash_storage.h
+Examining /firmware/STM32CubeIDE/Application/User/Core/flash_utils.c
+Examining /firmware/STM32CubeIDE/Application/User/Core/flash_utils.h
+Examining /firmware/STM32CubeIDE/Application/User/Core/ms5837.c
+Examining /firmware/STM32CubeIDE/Application/User/Core/ms5837.h
+Examining /firmware/STM32CubeIDE/Application/User/Core/pressure_sensor.c
+Examining /firmware/STM32CubeIDE/Application/User/Core/pressure_sensor.h
+Examining /firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c
+Examining /firmware/STM32CubeIDE/Application/User/Core/screens/screen_dive_log.c
+Examining /firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c
+Examining /firmware/STM32CubeIDE/Application/User/Core/screens/screen_menu.c
+Examining /firmware/STM32CubeIDE/Application/User/Core/screens/screen_power_off.c
+Examining /firmware/STM32CubeIDE/Application/User/Core/screens/screen_sensor_data.c
+Examining /firmware/STM32CubeIDE/Application/User/Core/screens/screen_settings.c
+Examining /firmware/STM32CubeIDE/Application/User/Core/screens/screen_startup.c
+Examining /firmware/STM32CubeIDE/Application/User/Core/screen_manager.c
+Examining /firmware/STM32CubeIDE/Application/User/Core/screen_manager.h
+Examining /firmware/STM32CubeIDE/Application/User/Core/sensor.c
+Examining /firmware/STM32CubeIDE/Application/User/Core/sensor.h
+Examining /firmware/STM32CubeIDE/Application/User/Core/sensor_diagnostics.c
+Examining /firmware/STM32CubeIDE/Application/User/Core/sensor_diagnostics.h
+Examining /firmware/STM32CubeIDE/Application/User/Core/settings_storage.c
+Examining /firmware/STM32CubeIDE/Application/User/Core/settings_storage.h
+Examining /firmware/STM32CubeIDE/Application/User/Core/st7789v.c
+Examining /firmware/STM32CubeIDE/Application/User/Core/st7789v.h
+Examining /firmware/STM32CubeIDE/Application/User/Core/syscalls.c
+Examining /firmware/STM32CubeIDE/Application/User/Core/sysmem.c
+Examining /firmware/STM32CubeIDE/Application/User/Core/w25q128.c
+Examining /firmware/STM32CubeIDE/Application/User/Core/w25q128.h
+Examining /firmware/STM32CubeIDE/Application/User/Core/warning.c
+Examining /firmware/STM32CubeIDE/Application/User/Core/warning.h
+Examining /firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c
+Examining /firmware/STM32CubeIDE/Application/User/Core/screens/screen_dive_log.c
+Examining /firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c
+Examining /firmware/STM32CubeIDE/Application/User/Core/screens/screen_menu.c
+Examining /firmware/STM32CubeIDE/Application/User/Core/screens/screen_power_off.c
+Examining /firmware/STM32CubeIDE/Application/User/Core/screens/screen_sensor_data.c
+Examining /firmware/STM32CubeIDE/Application/User/Core/screens/screen_settings.c
+Examining /firmware/STM32CubeIDE/Application/User/Core/screens/screen_startup.c
+
+FINAL RESULTS:
+
+/firmware/STM32CubeIDE/Application/User/Core/ext_flash_storage.c:172:5:  [2] (buffer) memcpy:Does not check for buffer overflows when copying to destination (CWE-120).  Make sure destination can always hold the source data. 
+    memcpy(tmp, buf, EXT_SETTINGS_ENTRY_SIZE);
+/firmware/STM32CubeIDE/Application/User/Core/ext_flash_storage.c:199:5:  [2] (buffer) memcpy:Does not check for buffer overflows when copying to destination (CWE-120).  Make sure destination can always hold the source data. 
+    memcpy(tmp, out, EXT_SETTINGS_ENTRY_SIZE);
+/firmware/STM32CubeIDE/Application/User/Core/ext_flash_storage.c:244:5:  [2] (buffer) memcpy:Does not check for buffer overflows when copying to destination (CWE-120).  Make sure destination can always hold the source data. 
+    memcpy(tmp, buf, EXT_CAL_ENTRY_SIZE);
+/firmware/STM32CubeIDE/Application/User/Core/ext_flash_storage.c:273:5:  [2] (buffer) memcpy:Does not check for buffer overflows when copying to destination (CWE-120).  Make sure destination can always hold the source data. 
+    memcpy(tmp, buf, EXT_CAL_ENTRY_SIZE);
+/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c:514:5:  [2] (buffer) char:Statically-sized arrays can be improperly restricted, leading to potential overflows or other issues (CWE-119!/CWE-120).  Perform bounds checking, use functions that limit length, or ensure that the size is larger than the maximum possible length. 
+    char buf[16];
+/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c:514:5:  [2] (buffer) char:Statically-sized arrays can be improperly restricted, leading to potential overflows or other issues (CWE-119!/CWE-120).  Perform bounds checking, use functions that limit length, or ensure that the size is larger than the maximum possible length. 
+    char buf[16];
+/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c:635:5:  [2] (buffer) char:Statically-sized arrays can be improperly restricted, leading to potential overflows or other issues (CWE-119!/CWE-120).  Perform bounds checking, use functions that limit length, or ensure that the size is larger than the maximum possible length. 
+    char buf[8];
+/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c:635:5:  [2] (buffer) char:Statically-sized arrays can be improperly restricted, leading to potential overflows or other issues (CWE-119!/CWE-120).  Perform bounds checking, use functions that limit length, or ensure that the size is larger than the maximum possible length. 
+    char buf[8];
+/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c:496:12:  [2] (buffer) char:Statically-sized arrays can be improperly restricted, leading to potential overflows or other issues (CWE-119!/CWE-120).  Perform bounds checking, use functions that limit length, or ensure that the size is larger than the maximum possible length. 
+    static char buf[8];
+/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c:496:12:  [2] (buffer) char:Statically-sized arrays can be improperly restricted, leading to potential overflows or other issues (CWE-119!/CWE-120).  Perform bounds checking, use functions that limit length, or ensure that the size is larger than the maximum possible length. 
+    static char buf[8];
+/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c:526:5:  [2] (buffer) char:Statically-sized arrays can be improperly restricted, leading to potential overflows or other issues (CWE-119!/CWE-120).  Perform bounds checking, use functions that limit length, or ensure that the size is larger than the maximum possible length. 
+    char buf[20];
+/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c:526:5:  [2] (buffer) char:Statically-sized arrays can be improperly restricted, leading to potential overflows or other issues (CWE-119!/CWE-120).  Perform bounds checking, use functions that limit length, or ensure that the size is larger than the maximum possible length. 
+    char buf[20];
+/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c:768:9:  [2] (buffer) char:Statically-sized arrays can be improperly restricted, leading to potential overflows or other issues (CWE-119!/CWE-120).  Perform bounds checking, use functions that limit length, or ensure that the size is larger than the maximum possible length. 
+        char time_buf[16];  // "HH:MM:SS" = 8 chars + null
+/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c:768:9:  [2] (buffer) char:Statically-sized arrays can be improperly restricted, leading to potential overflows or other issues (CWE-119!/CWE-120).  Perform bounds checking, use functions that limit length, or ensure that the size is larger than the maximum possible length. 
+        char time_buf[16];  // "HH:MM:SS" = 8 chars + null
+/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c:787:9:  [2] (buffer) char:Statically-sized arrays can be improperly restricted, leading to potential overflows or other issues (CWE-119!/CWE-120).  Perform bounds checking, use functions that limit length, or ensure that the size is larger than the maximum possible length. 
+        char bat_buf[24];  // worst-case snprintf: INT_MIN(11)+".X"(2)+"v "(2)+"100%"(4)+null
+/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c:787:9:  [2] (buffer) char:Statically-sized arrays can be improperly restricted, leading to potential overflows or other issues (CWE-119!/CWE-120).  Perform bounds checking, use functions that limit length, or ensure that the size is larger than the maximum possible length. 
+        char bat_buf[24];  // worst-case snprintf: INT_MIN(11)+".X"(2)+"v "(2)+"100%"(4)+null
+/firmware/STM32CubeIDE/Application/User/Core/screens/screen_sensor_data.c:111:12:  [2] (buffer) char:Statically-sized arrays can be improperly restricted, leading to potential overflows or other issues (CWE-119!/CWE-120).  Perform bounds checking, use functions that limit length, or ensure that the size is larger than the maximum possible length. 
+    static char buf[80];  // Static to avoid dangling pointer during LVGL refresh
+/firmware/STM32CubeIDE/Application/User/Core/screens/screen_sensor_data.c:111:12:  [2] (buffer) char:Statically-sized arrays can be improperly restricted, leading to potential overflows or other issues (CWE-119!/CWE-120).  Perform bounds checking, use functions that limit length, or ensure that the size is larger than the maximum possible length. 
+    static char buf[80];  // Static to avoid dangling pointer during LVGL refresh
+/firmware/STM32CubeIDE/Application/User/Core/screens/screen_settings.c:92:12:  [2] (buffer) char:Statically-sized arrays can be improperly restricted, leading to potential overflows or other issues (CWE-119!/CWE-120).  Perform bounds checking, use functions that limit length, or ensure that the size is larger than the maximum possible length. 
+    static char buf[16];
+/firmware/STM32CubeIDE/Application/User/Core/screens/screen_settings.c:92:12:  [2] (buffer) char:Statically-sized arrays can be improperly restricted, leading to potential overflows or other issues (CWE-119!/CWE-120).  Perform bounds checking, use functions that limit length, or ensure that the size is larger than the maximum possible length. 
+    static char buf[16];
+/firmware/STM32CubeIDE/Application/User/Core/syscalls.c:39:1:  [2] (buffer) char:Statically-sized arrays can be improperly restricted, leading to potential overflows or other issues (CWE-119!/CWE-120).  Perform bounds checking, use functions that limit length, or ensure that the size is larger than the maximum possible length. 
+char *__env[1] = { 0 };
+
+ANALYSIS SUMMARY:
+
+Hits = 21
+Lines analyzed = 13119 in approximately 0.80 seconds (16367 lines/second)
+Physical Source Lines of Code (SLOC) = 7589
+Hits@level = [0]  66 [1]   0 [2]  21 [3]   0 [4]   0 [5]   0
+Hits@level+ = [0+]  87 [1+]  21 [2+]  21 [3+]   0 [4+]   0 [5+]   0
+Hits/KSLOC@level+ = [0+] 11.464 [1+] 2.76716 [2+] 2.76716 [3+]   0 [4+]   0 [5+]   0
+Minimum risk level = 1
+
+Not every hit is necessarily a security vulnerability.
+You can inhibit a report by adding a comment in this form:
+// flawfinder: ignore
+Make *sure* it's a false positive!
+You can use the option --neverignore to show these.
+
+There may be other security vulnerabilities; review your code!
+See 'Secure Programming HOWTO'
+(https://dwheeler.com/secure-programs) for more information.

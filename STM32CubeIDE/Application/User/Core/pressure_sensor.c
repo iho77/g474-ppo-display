@@ -103,7 +103,7 @@ int32_t pressure_sensor_calculate_depth_mm(int32_t current_pressure_mbar, int32_
 
     /* Apply seawater depth formula with integer arithmetic */
     /* depth_mm = (delta_pressure_mbar × 995) / 100 */
-    int32_t depth_mm = (delta_pressure_mbar * DEPTH_COEFFICIENT_NUMERATOR) / DEPTH_COEFFICIENT_DENOMINATOR;
+    int32_t depth_mm = (int32_t)(((int64_t)delta_pressure_mbar * DEPTH_COEFFICIENT_NUMERATOR) / DEPTH_COEFFICIENT_DENOMINATOR);
 
     return depth_mm;
 }

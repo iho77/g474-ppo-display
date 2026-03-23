@@ -1,0 +1,8 @@
+// Suppress all findings in vendor/third-party code
+*:*Drivers/CMSIS/*
+*:*Drivers/STM32G4xx_HAL_Driver/*
+*:*Drivers/BSP/*
+*:*STM32CubeIDE/Drivers/lvgl/*
+*:*STM32CubeIDE/Drivers/BSP/*
+*:*STM32CubeIDE/Drivers/CMSIS/*
+*:*STM32CubeIDE/Drivers/STM32G4xx_HAL_Driver/*

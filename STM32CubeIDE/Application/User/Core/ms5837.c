@@ -25,6 +25,32 @@
 /* ==================== Private Helper Functions ==================== */
 
 /**
+ * @brief Compute MS5837 PROM CRC4 checksum per datasheet §2.4
+ *
+ * @param prom 7-element PROM array (C[0]..C[6])
+ * @return 4-bit CRC nibble
+ */
+static uint8_t ms5837_crc4(const uint16_t *prom)
+{
+    uint16_t w[8];
+    uint16_t n_rem = 0;
+
+    for (int i = 0; i < 7; i++) w[i] = prom[i];
+    w[0] = w[0] & 0x0FFFU;  /* mask stored CRC nibble */
+    w[7] = 0;
+
+    for (int i = 0; i < 16; i++) {
+        if (i & 1) n_rem ^= (uint16_t)(w[i >> 1] & 0x00FFU);
+        else       n_rem ^= (uint16_t)(w[i >> 1] >> 8);
+        for (int n = 8; n > 0; n--) {
+            if (n_rem & 0x8000U) n_rem = (n_rem << 1) ^ 0x3000U;
+            else                 n_rem = (n_rem << 1);
+        }
+    }
+    return (uint8_t)((n_rem >> 12) & 0x0FU);
+}
+
+/**
  * @brief Get conversion delay in milliseconds for given OSR level
  *
  * @param osr Oversampling ratio (MS5837_OSR_xxx)
@@ -71,7 +97,6 @@ ms5837_status_t ms5837_reset(I2C_HandleTypeDef *hi2c)
  */
 ms5837_status_t ms5837_read_prom(I2C_HandleTypeDef *hi2c, ms5837_calib_t *calib)
 {
-    HAL_StatusTypeDef hal_status;
     uint8_t prom_addr;
     uint8_t prom_data[2];
 
@@ -80,7 +105,7 @@ ms5837_status_t ms5837_read_prom(I2C_HandleTypeDef *hi2c, ms5837_calib_t *calib)
         prom_addr = MS5837_CMD_PROM_READ + (i * 2);
 
         // Send PROM read command
-        hal_status = HAL_I2C_Master_Transmit(hi2c, MS5837_I2C_ADDR << 1, &prom_addr, 1, MS5837_I2C_TIMEOUT);
+        HAL_StatusTypeDef hal_status = HAL_I2C_Master_Transmit(hi2c, MS5837_I2C_ADDR << 1, &prom_addr, 1, MS5837_I2C_TIMEOUT);
         if (hal_status != HAL_OK) {
             return (hal_status == HAL_TIMEOUT) ? MS5837_ERROR_TIMEOUT : MS5837_ERROR_I2C;
         }
@@ -97,6 +122,11 @@ ms5837_status_t ms5837_read_prom(I2C_HandleTypeDef *hi2c, ms5837_calib_t *calib)
 
     // Extract CRC from C[0][15:12]
     calib->crc_prom = (calib->C[0] >> 12) & 0x0F;
+
+    // Validate CRC4 against stored value
+    if (ms5837_crc4(calib->C) != calib->crc_prom) {
+        return MS5837_ERROR_CRC;
+    }
 
     return MS5837_OK;
 }
@@ -207,10 +237,6 @@ ms5837_status_t ms5837_calculate(const ms5837_calib_t *calib, uint32_t D1, uint3
     // SENS = C[1] * 2^16 + (C[3] * dT) / 2^7
     SENS = ((int64_t)calib->C[1] << 16) + (((int64_t)calib->C[3] * dT) >> 7);
 
-    // Calculate compensated pressure
-    // P = (D1 * SENS / 2^21 - OFF) / 2^15
-    P = ((((int64_t)D1 * SENS) >> 21) - OFF) >> 15;
-
     // ========== MS5837 SECOND-ORDER TEMPERATURE COMPENSATION ==========
     // CRITICAL: MS5837 has BOTH low AND high temperature paths
     int64_t T2 = 0, OFF2 = 0, SENS2 = 0;
@@ -279,6 +305,7 @@ ms5837_status_t ms5837_calculate(const ms5837_calib_t *calib, uint32_t D1, uint3
  */
 ms5837_status_t ms5837_init(I2C_HandleTypeDef *hi2c, ms5837_calib_t *calib, ms5837_data_t *data)
 {
+    (void)data;  /* Unused — kept for API compatibility; FSM handles measurements */
     ms5837_status_t status;
 
     status = ms5837_reset(hi2c);

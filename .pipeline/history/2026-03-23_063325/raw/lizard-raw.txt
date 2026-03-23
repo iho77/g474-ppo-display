@@ -1,0 +1,14 @@
+/firmware/Core/Src/main.c:550: warning: main has 126 NLOC, 23 CCN, 758 token, 0 PARAM, 251 length, 0 ND
+/firmware/Core/Src/main.c:1671: warning: MX_GPIO_Init has 58 NLOC, 1 CCN, 385 token, 0 PARAM, 90 length, 0 ND
+/firmware/Core/Src/stm32g4xx_hal_msp.c:115: warning: HAL_ADC_MspInit has 126 NLOC, 17 CCN, 703 token, 1 PARAM, 199 length, 0 ND
+/firmware/Core/Src/stm32g4xx_hal_msp.c:321: warning: HAL_ADC_MspDeInit has 38 NLOC, 9 CCN, 156 token, 1 PARAM, 103 length, 0 ND
+/firmware/Core/Src/stm32g4xx_hal_msp.c:650: warning: HAL_SPI_MspInit has 55 NLOC, 4 CCN, 319 token, 1 PARAM, 90 length, 0 ND
+/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c:56: warning: build_screen_content has 228 NLOC, 1 CCN, 1965 token, 1 PARAM, 252 length, 0 ND
+/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c:513: warning: screen_calibration_update has 88 NLOC, 22 CCN, 660 token, 0 PARAM, 116 length, 0 ND
+/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c:634: warning: screen_calibration_on_button has 62 NLOC, 21 CCN, 286 token, 1 PARAM, 81 length, 0 ND
+/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c:87: warning: build_screen_content has 309 NLOC, 1 CCN, 2707 token, 1 PARAM, 342 length, 0 ND
+/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c:519: warning: screen_main_update has 192 NLOC, 46 CCN, 1680 token, 0 PARAM, 282 length, 0 ND
+/firmware/STM32CubeIDE/Application/User/Core/screens/screen_sensor_data.c:107: warning: screen_sensor_data_update has 65 NLOC, 11 CCN, 589 token, 0 PARAM, 83 length, 0 ND
+/firmware/STM32CubeIDE/Application/User/Core/ext_flash_storage.c:535: warning: ext_cal_iterate has 58 NLOC, 16 CCN, 468 token, 3 PARAM, 73 length, 0 ND
+/firmware/STM32CubeIDE/Application/User/Core/ms5837.c:180: warning: ms5837_calculate has 38 NLOC, 3 CCN, 372 token, 4 PARAM, 81 length, 0 ND
+/firmware/STM32CubeIDE/Application/User/Core/sensor.c:182: warning: sensor_data_update has 78 NLOC, 23 CCN, 526 token, 2 PARAM, 117 length, 0 ND

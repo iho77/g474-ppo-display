@@ -1,0 +1,825 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<results version="2">
+    <cppcheck version="2.13.0"/>
+    <errors>
+        <error id="constParameterPointer" severity="style" msg="Parameter &apos;htim&apos; can be declared as pointer to const" verbose="Parameter &apos;htim&apos; can be declared as pointer to const" cwe="398" file0="/firmware/Core/Src/main.c">
+            <location file="/firmware/Core/Src/main.c" line="255" column="55" info="Parameter &apos;htim&apos; can be declared as pointer to const"/>
+            <symbol>htim</symbol>
+        </error>
+        <error id="constParameterPointer" severity="style" msg="Parameter &apos;hadc&apos; can be declared as pointer to const" verbose="Parameter &apos;hadc&apos; can be declared as pointer to const" cwe="398" file0="/firmware/Core/Src/main.c">
+            <location file="/firmware/Core/Src/main.c" line="303" column="50" info="Parameter &apos;hadc&apos; can be declared as pointer to const"/>
+            <symbol>hadc</symbol>
+        </error>
+        <error id="constParameterPointer" severity="style" msg="Parameter &apos;hspi&apos; can be declared as pointer to const" verbose="Parameter &apos;hspi&apos; can be declared as pointer to const" cwe="398" file0="/firmware/Core/Src/main.c">
+            <location file="/firmware/Core/Src/main.c" line="310" column="48" info="Parameter &apos;hspi&apos; can be declared as pointer to const"/>
+            <symbol>hspi</symbol>
+        </error>
+        <error id="constParameterPointer" severity="style" msg="Parameter &apos;hi2c&apos; can be declared as pointer to const" verbose="Parameter &apos;hi2c&apos; can be declared as pointer to const" cwe="398" file0="/firmware/Core/Src/main.c">
+            <location file="/firmware/Core/Src/main.c" line="513" column="47" info="Parameter &apos;hi2c&apos; can be declared as pointer to const"/>
+            <symbol>hi2c</symbol>
+        </error>
+        <error id="funcArgNamesDifferent" severity="style" msg="Function &apos;HAL_TIM_Base_MspInit&apos; argument 1 names different: declaration &apos;htim&apos; definition &apos;htim_base&apos;." verbose="Function &apos;HAL_TIM_Base_MspInit&apos; argument 1 names different: declaration &apos;htim&apos; definition &apos;htim_base&apos;." cwe="628" inconclusive="true" file0="/firmware/Core/Src/stm32g4xx_hal_msp.c">
+            <location file="/firmware/Core/Src/stm32g4xx_hal_msp.c" line="802" column="46"/>
+            <location file="/firmware/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_tim.h" line="2343" column="46"/>
+            <symbol>HAL_TIM_Base_MspInit</symbol>
+        </error>
+        <error id="funcArgNamesDifferent" severity="style" msg="Function &apos;HAL_TIM_Base_MspDeInit&apos; argument 1 names different: declaration &apos;htim&apos; definition &apos;htim_base&apos;." verbose="Function &apos;HAL_TIM_Base_MspDeInit&apos; argument 1 names different: declaration &apos;htim&apos; definition &apos;htim_base&apos;." cwe="628" inconclusive="true" file0="/firmware/Core/Src/stm32g4xx_hal_msp.c">
+            <location file="/firmware/Core/Src/stm32g4xx_hal_msp.c" line="917" column="48"/>
+            <location file="/firmware/Drivers/STM32G4xx_HAL_Driver/Inc/stm32g4xx_hal_tim.h" line="2344" column="48"/>
+            <symbol>HAL_TIM_Base_MspDeInit</symbol>
+        </error>
+        <error id="constParameterPointer" severity="style" msg="Parameter &apos;hi2c&apos; can be declared as pointer to const" verbose="Parameter &apos;hi2c&apos; can be declared as pointer to const" cwe="398" file0="/firmware/Core/Src/stm32g4xx_hal_msp.c">
+            <location file="/firmware/Core/Src/stm32g4xx_hal_msp.c" line="431" column="41" info="Parameter &apos;hi2c&apos; can be declared as pointer to const"/>
+            <symbol>hi2c</symbol>
+        </error>
+        <error id="constParameterPointer" severity="style" msg="Parameter &apos;hi2c&apos; can be declared as pointer to const" verbose="Parameter &apos;hi2c&apos; can be declared as pointer to const" cwe="398" file0="/firmware/Core/Src/stm32g4xx_hal_msp.c">
+            <location file="/firmware/Core/Src/stm32g4xx_hal_msp.c" line="491" column="43" info="Parameter &apos;hi2c&apos; can be declared as pointer to const"/>
+            <symbol>hi2c</symbol>
+        </error>
+        <error id="constParameterPointer" severity="style" msg="Parameter &apos;hopamp&apos; can be declared as pointer to const" verbose="Parameter &apos;hopamp&apos; can be declared as pointer to const" cwe="398" file0="/firmware/Core/Src/stm32g4xx_hal_msp.c">
+            <location file="/firmware/Core/Src/stm32g4xx_hal_msp.c" line="525" column="45" info="Parameter &apos;hopamp&apos; can be declared as pointer to const"/>
+            <symbol>hopamp</symbol>
+        </error>
+        <error id="constParameterPointer" severity="style" msg="Parameter &apos;hopamp&apos; can be declared as pointer to const" verbose="Parameter &apos;hopamp&apos; can be declared as pointer to const" cwe="398" file0="/firmware/Core/Src/stm32g4xx_hal_msp.c">
+            <location file="/firmware/Core/Src/stm32g4xx_hal_msp.c" line="594" column="47" info="Parameter &apos;hopamp&apos; can be declared as pointer to const"/>
+            <symbol>hopamp</symbol>
+        </error>
+        <error id="constParameterPointer" severity="style" msg="Parameter &apos;htim_base&apos; can be declared as pointer to const" verbose="Parameter &apos;htim_base&apos; can be declared as pointer to const" cwe="398" file0="/firmware/Core/Src/stm32g4xx_hal_msp.c">
+            <location file="/firmware/Core/Src/stm32g4xx_hal_msp.c" line="802" column="46" info="Parameter &apos;htim_base&apos; can be declared as pointer to const"/>
+            <symbol>htim_base</symbol>
+        </error>
+        <error id="constParameterPointer" severity="style" msg="Parameter &apos;htim&apos; can be declared as pointer to const" verbose="Parameter &apos;htim&apos; can be declared as pointer to const" cwe="398" file0="/firmware/Core/Src/stm32g4xx_hal_msp.c">
+            <location file="/firmware/Core/Src/stm32g4xx_hal_msp.c" line="865" column="45" info="Parameter &apos;htim&apos; can be declared as pointer to const"/>
+            <symbol>htim</symbol>
+        </error>
+        <error id="constParameterPointer" severity="style" msg="Parameter &apos;htim_base&apos; can be declared as pointer to const" verbose="Parameter &apos;htim_base&apos; can be declared as pointer to const" cwe="398" file0="/firmware/Core/Src/stm32g4xx_hal_msp.c">
+            <location file="/firmware/Core/Src/stm32g4xx_hal_msp.c" line="917" column="48" info="Parameter &apos;htim_base&apos; can be declared as pointer to const"/>
+            <symbol>htim_base</symbol>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Condition &apos;next_seq==0U&apos; is always false" verbose="Condition &apos;next_seq==0U&apos; is always false" cwe="570" file0="/firmware/STM32CubeIDE/Application/User/Core/ext_flash_storage.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/ext_flash_storage.c" line="340" column="18" info="Condition &apos;next_seq==0U&apos; is always false"/>
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/ext_flash_storage.c" line="339" column="37" info="Assignment &apos;next_seq=highest_seq+1U&apos;, assigned value is greater than 0"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Condition &apos;next_seq==0U&apos; is always false" verbose="Condition &apos;next_seq==0U&apos; is always false" cwe="570" file0="/firmware/STM32CubeIDE/Application/User/Core/ext_flash_storage.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/ext_flash_storage.c" line="451" column="30" info="Condition &apos;next_seq==0U&apos; is always false"/>
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/ext_flash_storage.c" line="450" column="50" info="Assignment &apos;next_seq=get_u32(&amp;prev_buf[4])+1U&apos;, assigned value is greater than 0"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c" line="66" column="82"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c" line="67" column="61"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c" line="68" column="81"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c" line="77" column="82"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c" line="78" column="61"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c" line="79" column="81"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c" line="80" column="80"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c" line="81" column="59"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c" line="90" column="82"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c" line="91" column="61"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c" line="92" column="81"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c" line="93" column="80"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c" line="94" column="59"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c" line="103" column="81"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c" line="104" column="60"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c" line="105" column="84"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c" line="114" column="81"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c" line="115" column="60"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c" line="116" column="84"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c" line="125" column="81"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c" line="126" column="60"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c" line="127" column="84"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c" line="137" column="87"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c" line="138" column="66"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c" line="139" column="86"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c" line="148" column="80"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c" line="149" column="59"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c" line="150" column="79"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c" line="160" column="87"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c" line="161" column="66"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c" line="162" column="86"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c" line="172" column="86"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c" line="173" column="65"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c" line="174" column="85"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c" line="184" column="85"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c" line="185" column="64"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c" line="186" column="84"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c" line="198" column="85"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c" line="199" column="64"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c" line="200" column="84"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c" line="210" column="86"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c" line="211" column="65"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c" line="212" column="85"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c" line="222" column="85"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c" line="223" column="64"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c" line="224" column="84"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c" line="234" column="86"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c" line="235" column="65"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c" line="236" column="85"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c" line="246" column="86"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c" line="247" column="65"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c" line="248" column="85"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c" line="258" column="87"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c" line="259" column="66"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c" line="260" column="86"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c" line="269" column="83"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c" line="270" column="62"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c" line="271" column="82"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c" line="280" column="83"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c" line="281" column="62"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c" line="282" column="82"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c" line="291" column="83"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c" line="292" column="62"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c" line="293" column="82"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c" line="303" column="85"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c" line="304" column="64"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c" line="305" column="84"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c" line="482" column="75"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_calibration.c" line="483" column="54"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Condition &apos;num_sensors&gt;3&apos; is always false" verbose="Condition &apos;num_sensors&gt;3&apos; is always false" cwe="570" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="649" column="21" info="Condition &apos;num_sensors&gt;3&apos; is always false"/>
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="648" column="43" info="Assignment &apos;num_sensors=(SENSOR_COUNT&gt;=2)?(SENSOR_COUNT-2):0&apos;, assigned value is 3"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="95" column="84"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="96" column="63"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="97" column="83"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="106" column="86"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="107" column="65"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="108" column="85"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="117" column="89"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="118" column="68"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="119" column="92"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="128" column="82"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="129" column="61"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="130" column="81"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="139" column="82"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="140" column="61"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="141" column="81"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="150" column="82"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="151" column="61"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="152" column="81"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="161" column="81"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="162" column="60"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="163" column="80"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="172" column="82"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="173" column="61"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="174" column="81"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="183" column="83"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="184" column="62"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="193" column="81"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="194" column="60"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="195" column="80"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="204" column="81"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="205" column="60"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="206" column="80"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="215" column="89"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="216" column="68"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="217" column="92"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="227" column="83"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="228" column="62"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="237" column="80"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="238" column="59"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="239" column="79"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="240" column="57"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="249" column="83"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="250" column="62"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="251" column="82"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="260" column="83"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="261" column="62"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="262" column="82"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="271" column="81"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="272" column="60"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="273" column="80"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="282" column="81"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="283" column="60"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="284" column="80"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="293" column="83"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="294" column="62"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="295" column="82"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="304" column="80"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="305" column="59"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="306" column="83"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="315" column="83"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="316" column="62"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="317" column="82"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="326" column="83"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="327" column="62"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="328" column="82"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="337" column="81"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="338" column="60"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="339" column="84"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="348" column="83"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="349" column="62"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="350" column="82"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="359" column="80"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="360" column="59"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="361" column="84"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="362" column="63"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="363" column="63"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="370" column="84"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="371" column="63"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="372" column="87"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="381" column="80"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="382" column="59"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="383" column="84"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="384" column="63"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="385" column="63"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="392" column="84"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="393" column="63"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="394" column="87"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="403" column="80"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="404" column="59"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="405" column="84"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="406" column="63"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="407" column="63"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="414" column="84"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="415" column="63"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="416" column="87"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="447" column="69"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="448" column="69"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="454" column="88"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="455" column="76"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="457" column="88"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="458" column="76"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="461" column="88"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="462" column="76"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="464" column="88"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="465" column="76"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="470" column="88"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="471" column="76"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="473" column="88"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="474" column="76"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="490" column="70"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="491" column="49"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="563" column="34"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="569" column="106"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="570" column="107"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="571" column="106"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="590" column="82"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="592" column="82"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="676" column="87"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="678" column="87"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="680" column="87"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="685" column="83"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="735" column="86"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="736" column="74"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="737" column="88"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="740" column="75"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="741" column="88"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="746" column="71"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="747" column="84"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="793" column="88"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="795" column="88"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c" line="797" column="88"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_menu.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_menu.c" line="58" column="86"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_menu.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_menu.c" line="59" column="61"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_menu.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_menu.c" line="60" column="81"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_menu.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_menu.c" line="69" column="82"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_menu.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_menu.c" line="70" column="61"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_menu.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_menu.c" line="71" column="81"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_menu.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_menu.c" line="80" column="82"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_menu.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_menu.c" line="81" column="61"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_menu.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_menu.c" line="82" column="81"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_menu.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_menu.c" line="91" column="83"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_menu.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_menu.c" line="92" column="62"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_menu.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_menu.c" line="93" column="82"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_menu.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_menu.c" line="102" column="83"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_menu.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_menu.c" line="103" column="62"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_menu.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_menu.c" line="104" column="82"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_menu.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_menu.c" line="136" column="73"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_menu.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/screens/screen_menu.c" line="137" column="52"/>
+        </error>
+        <error id="missingInclude" severity="information" msg="Include file: &quot;stdint.h&quot; not found." verbose="Include file: &quot;stdint.h&quot; not found.">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/sensor.c" line="15" column="0"/>
+        </error>
+        <error id="missingInclude" severity="information" msg="Include file: &quot;stdbool.h&quot; not found." verbose="Include file: &quot;stdbool.h&quot; not found.">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/sensor.c" line="16" column="0"/>
+        </error>
+        <error id="uninitvar" severity="warning" msg="Uninitialized variable: d" verbose="Uninitialized variable: d" cwe="457" file0="/firmware/STM32CubeIDE/Application/User/Core/sensor.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/sensor.c" line="104" column="9"/>
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/sensor.c" line="90" column="20" info="Assuming condition is false"/>
+            <symbol>d</symbol>
+        </error>
+        <error id="constVariable" severity="style" msg="Variable &apos;param_madctl&apos; can be declared as const array" verbose="Variable &apos;param_madctl&apos; can be declared as const array" cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/st7789v.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/st7789v.c" line="42" column="13" info="Variable &apos;param_madctl&apos; can be declared as const array"/>
+            <symbol>param_madctl</symbol>
+        </error>
+        <error id="constVariable" severity="style" msg="Variable &apos;param_colmod&apos; can be declared as const array" verbose="Variable &apos;param_colmod&apos; can be declared as const array" cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/st7789v.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/st7789v.c" line="43" column="13" info="Variable &apos;param_colmod&apos; can be declared as const array"/>
+            <symbol>param_colmod</symbol>
+        </error>
+        <error id="constVariable" severity="style" msg="Variable &apos;param_porctrl&apos; can be declared as const array" verbose="Variable &apos;param_porctrl&apos; can be declared as const array" cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/st7789v.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/st7789v.c" line="44" column="13" info="Variable &apos;param_porctrl&apos; can be declared as const array"/>
+            <symbol>param_porctrl</symbol>
+        </error>
+        <error id="constVariable" severity="style" msg="Variable &apos;param_gctrl&apos; can be declared as const array" verbose="Variable &apos;param_gctrl&apos; can be declared as const array" cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/st7789v.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/st7789v.c" line="45" column="13" info="Variable &apos;param_gctrl&apos; can be declared as const array"/>
+            <symbol>param_gctrl</symbol>
+        </error>
+        <error id="constVariable" severity="style" msg="Variable &apos;param_vcoms&apos; can be declared as const array" verbose="Variable &apos;param_vcoms&apos; can be declared as const array" cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/st7789v.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/st7789v.c" line="46" column="13" info="Variable &apos;param_vcoms&apos; can be declared as const array"/>
+            <symbol>param_vcoms</symbol>
+        </error>
+        <error id="constVariable" severity="style" msg="Variable &apos;param_lcmctrl&apos; can be declared as const array" verbose="Variable &apos;param_lcmctrl&apos; can be declared as const array" cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/st7789v.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/st7789v.c" line="47" column="13" info="Variable &apos;param_lcmctrl&apos; can be declared as const array"/>
+            <symbol>param_lcmctrl</symbol>
+        </error>
+        <error id="constVariable" severity="style" msg="Variable &apos;param_vdvvrhen&apos; can be declared as const array" verbose="Variable &apos;param_vdvvrhen&apos; can be declared as const array" cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/st7789v.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/st7789v.c" line="48" column="13" info="Variable &apos;param_vdvvrhen&apos; can be declared as const array"/>
+            <symbol>param_vdvvrhen</symbol>
+        </error>
+        <error id="constVariable" severity="style" msg="Variable &apos;param_vrhs&apos; can be declared as const array" verbose="Variable &apos;param_vrhs&apos; can be declared as const array" cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/st7789v.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/st7789v.c" line="49" column="13" info="Variable &apos;param_vrhs&apos; can be declared as const array"/>
+            <symbol>param_vrhs</symbol>
+        </error>
+        <error id="constVariable" severity="style" msg="Variable &apos;param_vdvs&apos; can be declared as const array" verbose="Variable &apos;param_vdvs&apos; can be declared as const array" cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/st7789v.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/st7789v.c" line="50" column="13" info="Variable &apos;param_vdvs&apos; can be declared as const array"/>
+            <symbol>param_vdvs</symbol>
+        </error>
+        <error id="constVariable" severity="style" msg="Variable &apos;param_frctrl2&apos; can be declared as const array" verbose="Variable &apos;param_frctrl2&apos; can be declared as const array" cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/st7789v.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/st7789v.c" line="51" column="13" info="Variable &apos;param_frctrl2&apos; can be declared as const array"/>
+            <symbol>param_frctrl2</symbol>
+        </error>
+        <error id="constVariable" severity="style" msg="Variable &apos;param_pwctrl1&apos; can be declared as const array" verbose="Variable &apos;param_pwctrl1&apos; can be declared as const array" cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/st7789v.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/st7789v.c" line="52" column="13" info="Variable &apos;param_pwctrl1&apos; can be declared as const array"/>
+            <symbol>param_pwctrl1</symbol>
+        </error>
+        <error id="constVariable" severity="style" msg="Variable &apos;param_pvgam&apos; can be declared as const array" verbose="Variable &apos;param_pvgam&apos; can be declared as const array" cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/st7789v.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/st7789v.c" line="53" column="13" info="Variable &apos;param_pvgam&apos; can be declared as const array"/>
+            <symbol>param_pvgam</symbol>
+        </error>
+        <error id="constVariable" severity="style" msg="Variable &apos;param_nvgam&apos; can be declared as const array" verbose="Variable &apos;param_nvgam&apos; can be declared as const array" cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/st7789v.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/st7789v.c" line="57" column="13" info="Variable &apos;param_nvgam&apos; can be declared as const array"/>
+            <symbol>param_nvgam</symbol>
+        </error>
+        <error id="constVariable" severity="style" msg="Variable &apos;caset_data&apos; can be declared as const array" verbose="Variable &apos;caset_data&apos; can be declared as const array" cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/st7789v.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/st7789v.c" line="98" column="13" info="Variable &apos;caset_data&apos; can be declared as const array"/>
+            <symbol>caset_data</symbol>
+        </error>
+        <error id="constVariable" severity="style" msg="Variable &apos;raset_data&apos; can be declared as const array" verbose="Variable &apos;raset_data&apos; can be declared as const array" cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/st7789v.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/st7789v.c" line="104" column="13" info="Variable &apos;raset_data&apos; can be declared as const array"/>
+            <symbol>raset_data</symbol>
+        </error>
+        <error id="constParameterPointer" severity="style" msg="Parameter &apos;ptr&apos; can be declared as pointer to const" verbose="Parameter &apos;ptr&apos; can be declared as pointer to const" cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/syscalls.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/syscalls.c" line="80" column="50" info="Parameter &apos;ptr&apos; can be declared as pointer to const"/>
+            <symbol>ptr</symbol>
+        </error>
+        <error id="constParameterPointer" severity="style" msg="Parameter &apos;buf&apos; can be declared as pointer to const" verbose="Parameter &apos;buf&apos; can be declared as pointer to const" cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/w25q128.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/w25q128.c" line="20" column="66" info="Parameter &apos;buf&apos; can be declared as pointer to const"/>
+            <symbol>buf</symbol>
+        </error>
+        <error id="constVariable" severity="style" msg="Variable &apos;tx&apos; can be declared as const array" verbose="Variable &apos;tx&apos; can be declared as const array" cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/w25q128.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/w25q128.c" line="111" column="13" info="Variable &apos;tx&apos; can be declared as const array"/>
+            <symbol>tx</symbol>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/warning.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/warning.c" line="301" column="52"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/warning.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/warning.c" line="303" column="49"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/warning.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/warning.c" line="305" column="46"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/warning.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/warning.c" line="311" column="51"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/warning.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/warning.c" line="313" column="49"/>
+        </error>
+        <error id="knownConditionTrueFalse" severity="style" msg="Same expression on both sides of &apos;|&apos; because &apos;LV_PART_MAIN&apos; and &apos;LV_STATE_DEFAULT&apos; represent the same value." verbose="Finding the same expression on both sides of an operator is suspicious and might indicate a cut and paste or logic error. Please examine this code carefully to determine if it is correct." cwe="398" file0="/firmware/STM32CubeIDE/Application/User/Core/warning.c">
+            <location file="/firmware/STM32CubeIDE/Application/User/Core/warning.c" line="315" column="46"/>
+        </error>
+        <error id="checkersReport" severity="information" msg="Active checkers: 113/592 (use --checkers-report=&lt;filename&gt; to see details)" verbose="Active checkers: 113/592 (use --checkers-report=&lt;filename&gt; to see details)"/>
+    </errors>
+</results>

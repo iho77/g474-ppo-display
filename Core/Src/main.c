@@ -74,7 +74,6 @@ uint32_t g_elapsed_time_sec = 0;
 /* Bottom timer start depth in mm. 1000 mm = 1 m. Change for bench testing. */
 #define BOTTOM_TIMER_START_DEPTH_MM  1000
 
-uint32_t something = 10;
 
 static volatile uint32_t g_ms = 0; // ms since boot (from 1kHz tick)
 static volatile uint32_t g_ms1 = 0;
@@ -106,8 +105,6 @@ const uint16_t backlight_gamma_lut[11] = {
 };
 
 uint32_t vref_effective_mv = 3300;     // == VDDA in mV
-uint32_t vbias_effective_mv = 0;    // VBIAS in mV (at ADC1_CH1)
-uint32_t vbias_counts_for_adc2 = 0; // bias as "counts" seen by ADC2 path with G=16
 
 // OPAMP offset calibration results (volatile to prevent optimizer from removing)
 volatile uint16_t offset_counts_ch1 = 0;  // for OPAMP2 -> ADC_CHANNEL_VOPAMP2
@@ -168,6 +165,8 @@ DMA_HandleTypeDef hdma_adc4;
 
 I2C_HandleTypeDef hi2c1;
 
+IWDG_HandleTypeDef hiwdg;
+
 OPAMP_HandleTypeDef hopamp1;
 OPAMP_HandleTypeDef hopamp2;
 OPAMP_HandleTypeDef hopamp3;
@@ -205,6 +204,7 @@ static void MX_TIM5_Init(void);
 static void MX_TIM1_Init(void);
 static void MX_TIM6_Init(void);
 static void MX_TIM3_Init(void);
+static void MX_IWDG_Init(void);
 /* USER CODE BEGIN PFP */
 void vibro_motor_test(void);
 
@@ -538,30 +538,6 @@ void HAL_I2C_ErrorCallback(I2C_HandleTypeDef *hi2c)
 
 
 
-
-
-void ms5837_i2c_bus_recover1(void) {
-    // 1. Force a hardware reset of the I2C1 peripheral core
-    __HAL_RCC_I2C1_FORCE_RESET();
-
-    // 2. Wait a fraction of a millisecond
-    HAL_Delay(1);
-
-    // 3. Release the reset
-    __HAL_RCC_I2C1_RELEASE_RESET();
-
-    // 4. Re-initialize the peripheral completely so the HAL state matches hardware
-    if (HAL_I2C_Init(&hi2c1) != HAL_OK) {
-        // Handle Init Error
-    }
-
-    // Re-apply the noise filters here if they aren't inside HAL_I2C_Init
-}
-
-
-
-
-
 /* USER CODE END 0 */
 
 /**
@@ -609,6 +585,7 @@ int main(void)
   MX_TIM1_Init();
   MX_TIM6_Init();
   MX_TIM3_Init();
+  MX_IWDG_Init();
   /* USER CODE BEGIN 2 */
 
   /* DEBUG: uncomment to test vibro motor hardware before main loop */
@@ -655,6 +632,8 @@ int main(void)
   	// First measurement comes from the DMA FSM within ~1s
   	if (ms5837_init(&hi2c1, &ms5837_calib, &ms5837_data) == MS5837_OK) {
   	    ms5837_initialized = true;
+  	} else {
+  	    sensor_data.pressure.pressure_valid = false; /* prevent phantom depth timer on sensor fault */
   	}
 
   	/* Initialize external flash storage (W25Q128 + calibration log scan) */
@@ -675,7 +654,7 @@ int main(void)
   	uint8_t brightness = sensor_data.settings.lcd_brightness;
   	uint8_t gamma_index = brightness / 10;  // 10% → index 1, 100% → index 10
   	if (gamma_index > 10) gamma_index = 10;  // Clamp to max index
-  	uint16_t pwm_value = backlight_gamma_lut[10];
+  	uint16_t pwm_value = backlight_gamma_lut[gamma_index];
 
   	// Set compare value before starting PWM
   	__HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_3, pwm_value);
@@ -772,12 +751,19 @@ int main(void)
 
 		if (atomic_exchange(&g_adc4_new, false)) {
 
-			sensor_data_update(REFERENCE, ADC4_VAL[0]);
-			sensor_data_update(BAT, ADC4_VAL[1]);
+			/* Copy both DMA values atomically — ADC4 DMA runs continuously in circular mode;
+			 * reading [0] then [1] without protection risks a torn pair across a half-transfer */
+			__disable_irq();
+			uint16_t adc4_vref = ADC4_VAL[0];
+			uint16_t adc4_bat  = ADC4_VAL[1];
+			__enable_irq();
+			sensor_data_update(REFERENCE, adc4_vref);
+			sensor_data_update(BAT, adc4_bat);
 
 		}
 
 		if (atomic_exchange(&g_flag_1hz, false)) {
+			HAL_IWDG_Refresh(&hiwdg);
 			/* Bottom timer: advance only when depth >= threshold */
 			if (sensor_data.pressure.pressure_valid
 					&& sensor_data.pressure.depth_mm
@@ -834,9 +820,10 @@ void SystemClock_Config(void)
   /** Initializes the RCC Oscillators according to the specified parameters
   * in the RCC_OscInitTypeDef structure.
   */
-  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI;
+  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI|RCC_OSCILLATORTYPE_LSI;
   RCC_OscInitStruct.HSIState = RCC_HSI_ON;
   RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
+  RCC_OscInitStruct.LSIState = RCC_LSI_ON;
   RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSI;
   RCC_OscInitStruct.PLL.PLLM = RCC_PLLM_DIV1;
@@ -1188,6 +1175,35 @@ static void MX_I2C1_Init(void)
   /* USER CODE BEGIN I2C1_Init 2 */
 
   /* USER CODE END I2C1_Init 2 */
+
+}
+
+/**
+  * @brief IWDG Initialization Function
+  * @param None
+  * @retval None
+  */
+static void MX_IWDG_Init(void)
+{
+
+  /* USER CODE BEGIN IWDG_Init 0 */
+
+  /* USER CODE END IWDG_Init 0 */
+
+  /* USER CODE BEGIN IWDG_Init 1 */
+
+  /* USER CODE END IWDG_Init 1 */
+  hiwdg.Instance = IWDG;
+  hiwdg.Init.Prescaler = IWDG_PRESCALER_64;
+  hiwdg.Init.Window = 4095;
+  hiwdg.Init.Reload = 2999;
+  if (HAL_IWDG_Init(&hiwdg) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /* USER CODE BEGIN IWDG_Init 2 */
+
+  /* USER CODE END IWDG_Init 2 */
 
 }
 

@@ -508,7 +508,7 @@ void ext_cal_erase(void)
         return;
     }
     for (uint32_t s = 0U; s < EXT_CAL_SECTOR_COUNT; s++) {
-        uint32_t sector_addr = EXT_CAL_SECTOR_FIRST + (s * 4096U);
+        uint32_t sector_addr = EXT_CAL_SECTOR_FIRST + (uint32_t)(s * 4096U);
         (void)w25q128_erase_sector(g_hspi, sector_addr);
     }
     g_cal_write_offset = 0U;
@@ -544,7 +544,7 @@ uint32_t ext_cal_iterate(flash_calib_iterator_cb cb, void *ud, uint32_t max)
     /* Maximum number of entries we can hold for sort: cap at 64 to limit stack */
     #define EXT_CAL_ITER_MAX_SORT 64U
 
-    entry_ref_t valid[EXT_CAL_ITER_MAX_SORT];
+    static entry_ref_t valid[EXT_CAL_ITER_MAX_SORT]; /* static: avoids 512-byte stack alloc on hot path */
     uint32_t valid_count = 0U;
 
     for (uint32_t off = 0U; off < g_cal_write_offset; off = cal_advance_offset(off)) {

@@ -164,6 +164,16 @@ stm32g474_PPO_Display.ioc      # STM32CubeMX project
 
 ---
 
+## Safety Audit
+
+A static safety audit of all application firmware was conducted on 2026-03-23, covering fault handling, ISR/main-loop data races, arithmetic overflow, sensor validity propagation, and stack usage.
+
+- 15 findings identified (4 HIGH, 7 MEDIUM, 5 LOW / CRITICAL: 0)
+- All actionable findings resolved in the same session
+- Full report, per-finding evidence, and resolution details: [`.pipeline/safety_audit.md`](.pipeline/safety_audit.md)
+
+---
+
 ## Building
 
 Requires **STM32CubeIDE 1.19+**.

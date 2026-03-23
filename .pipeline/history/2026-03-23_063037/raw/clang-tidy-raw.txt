@@ -1,0 +1,544 @@
+   Analyzing: main.c
+/firmware/Drivers/CMSIS/Device/ST/STM32G4xx/Include/stm32g4xx.h:111:12: error: 'stm32g431xx.h' file not found [clang-diagnostic-error]
+  111 |   #include "stm32g431xx.h"
+      |            ^~~~~~~~~~~~~~~
+   Analyzing: stm32g4xx_hal_msp.c
+/firmware/Core/Src/stm32g4xx_hal_msp.c:324:3: warning: repeated branch body in conditional chain [bugprone-branch-clone]
+  324 |   {
+      |   ^
+/firmware/Core/Src/stm32g4xx_hal_msp.c:349:4: note: end of the original
+  349 |   }
+      |    ^
+/firmware/Core/Src/stm32g4xx_hal_msp.c:351:3: note: clone 1 starts here
+  351 |   {
+      |   ^
+/firmware/Core/Src/stm32g4xx_hal_msp.c:378:3: warning: repeated branch body in conditional chain [bugprone-branch-clone]
+  378 |   {
+      |   ^
+/firmware/Core/Src/stm32g4xx_hal_msp.c:396:4: note: end of the original
+  396 |   }
+      |    ^
+/firmware/Core/Src/stm32g4xx_hal_msp.c:398:3: note: clone 1 starts here
+  398 |   {
+      |   ^
+/firmware/Core/Src/stm32g4xx_hal_msp.c:529:3: warning: repeated branch body in conditional chain [bugprone-branch-clone]
+  529 |   {
+      |   ^
+/firmware/Core/Src/stm32g4xx_hal_msp.c:546:4: note: end of the original
+  546 |   }
+      |    ^
+/firmware/Core/Src/stm32g4xx_hal_msp.c:548:3: note: clone 1 starts here
+  548 |   {
+      |   ^
+/firmware/Core/Src/stm32g4xx_hal_msp.c:567:3: note: clone 2 starts here
+  567 |   {
+      |   ^
+/firmware/Core/Src/stm32g4xx_hal_msp.c:597:3: warning: repeated branch body in conditional chain [bugprone-branch-clone]
+  597 |   {
+      |   ^
+/firmware/Core/Src/stm32g4xx_hal_msp.c:610:4: note: end of the original
+  610 |   }
+      |    ^
+/firmware/Core/Src/stm32g4xx_hal_msp.c:612:3: note: clone 1 starts here
+  612 |   {
+      |   ^
+/firmware/Core/Src/stm32g4xx_hal_msp.c:627:3: note: clone 2 starts here
+  627 |   {
+      |   ^
+/firmware/Core/Src/stm32g4xx_hal_msp.c:805:3: warning: repeated branch body in conditional chain [bugprone-branch-clone]
+  805 |   {
+      |   ^
+/firmware/Core/Src/stm32g4xx_hal_msp.c:814:4: note: end of the original
+  814 |   }
+      |    ^
+/firmware/Core/Src/stm32g4xx_hal_msp.c:816:3: note: clone 1 starts here
+  816 |   {
+      |   ^
+/firmware/Core/Src/stm32g4xx_hal_msp.c:827:3: note: clone 2 starts here
+  827 |   {
+      |   ^
+/firmware/Core/Src/stm32g4xx_hal_msp.c:849:3: note: clone 3 starts here
+  849 |   {
+      |   ^
+/firmware/Core/Src/stm32g4xx_hal_msp.c:869:3: warning: repeated branch body in conditional chain [bugprone-branch-clone]
+  869 |   {
+      |   ^
+/firmware/Core/Src/stm32g4xx_hal_msp.c:887:4: note: end of the original
+  887 |   }
+      |    ^
+/firmware/Core/Src/stm32g4xx_hal_msp.c:889:3: note: clone 1 starts here
+  889 |   {
+      |   ^
+/firmware/Core/Src/stm32g4xx_hal_msp.c:920:3: warning: repeated branch body in conditional chain [bugprone-branch-clone]
+  920 |   {
+      |   ^
+/firmware/Core/Src/stm32g4xx_hal_msp.c:929:4: note: end of the original
+  929 |   }
+      |    ^
+/firmware/Core/Src/stm32g4xx_hal_msp.c:931:3: note: clone 1 starts here
+  931 |   {
+      |   ^
+/firmware/Core/Src/stm32g4xx_hal_msp.c:942:3: note: clone 2 starts here
+  942 |   {
+      |   ^
+/firmware/Core/Src/stm32g4xx_hal_msp.c:964:3: note: clone 3 starts here
+  964 |   {
+      |   ^
+/firmware/Drivers/CMSIS/Device/ST/STM32G4xx/Include/stm32g4xx.h:111:12: error: 'stm32g431xx.h' file not found [clang-diagnostic-error]
+  111 |   #include "stm32g431xx.h"
+      |            ^~~~~~~~~~~~~~~
+   Analyzing: stm32g4xx_it.c
+/firmware/Drivers/CMSIS/Device/ST/STM32G4xx/Include/stm32g4xx.h:111:12: error: 'stm32g431xx.h' file not found [clang-diagnostic-error]
+  111 |   #include "stm32g431xx.h"
+      |            ^~~~~~~~~~~~~~~
+   Analyzing: system_stm32g4xx.c
+/firmware/Core/Src/system_stm32g4xx.c:251:7: warning: if with identical then and else branches [bugprone-branch-clone]
+  251 |       if (pllsource == 0x02UL) /* HSI used as PLL clock source */
+      |       ^
+/firmware/Core/Src/system_stm32g4xx.c:255:7: note: else branch starts here
+  255 |       else                   /* HSE used as PLL clock source */
+      |       ^
+/firmware/Drivers/CMSIS/Device/ST/STM32G4xx/Include/stm32g4xx.h:111:12: error: 'stm32g431xx.h' file not found [clang-diagnostic-error]
+  111 |   #include "stm32g431xx.h"
+      |            ^~~~~~~~~~~~~~~
+   Analyzing: button.c
+/firmware/Drivers/CMSIS/Device/ST/STM32G4xx/Include/stm32g4xx.h:111:12: error: 'stm32g431xx.h' file not found [clang-diagnostic-error]
+  111 |   #include "stm32g431xx.h"
+      |            ^~~~~~~~~~~~~~~
+   Analyzing: calibration.c
+   Analyzing: drift_tracker.c
+   Analyzing: ext_flash_storage.c
+/firmware/Drivers/CMSIS/Device/ST/STM32G4xx/Include/stm32g4xx.h:111:12: error: 'stm32g431xx.h' file not found [clang-diagnostic-error]
+  111 |   #include "stm32g431xx.h"
+      |            ^~~~~~~~~~~~~~~
+   Analyzing: flash_storage.c
+/firmware/Drivers/CMSIS/Device/ST/STM32G4xx/Include/stm32g4xx.h:111:12: error: 'stm32g431xx.h' file not found [clang-diagnostic-error]
+  111 |   #include "stm32g431xx.h"
+      |            ^~~~~~~~~~~~~~~
+   Analyzing: flash_utils.c
+/firmware/Drivers/CMSIS/Device/ST/STM32G4xx/Include/stm32g4xx.h:111:12: error: 'stm32g431xx.h' file not found [clang-diagnostic-error]
+  111 |   #include "stm32g431xx.h"
+      |            ^~~~~~~~~~~~~~~
+   Analyzing: ms5837.c
+/firmware/Drivers/CMSIS/Device/ST/STM32G4xx/Include/stm32g4xx.h:111:12: error: 'stm32g431xx.h' file not found [clang-diagnostic-error]
+  111 |   #include "stm32g431xx.h"
+      |            ^~~~~~~~~~~~~~~
+   Analyzing: pressure_sensor.c
+   Analyzing: screen_calibration.c
+/firmware/Drivers/CMSIS/Device/ST/STM32G4xx/Include/stm32g4xx.h:111:12: error: 'stm32g431xx.h' file not found [clang-diagnostic-error]
+  111 |   #include "stm32g431xx.h"
+      |            ^~~~~~~~~~~~~~~
+   Analyzing: screen_dive_log.c
+   Analyzing: screen_main.c
+/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c:497:11: warning: Call to function 'snprintf' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'snprintf_s' in case of C11 [clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling]
+  497 |     (void)snprintf(buf, sizeof(buf), "%d.%02d",
+      |           ^~~~~~~~
+/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c:497:11: note: Call to function 'snprintf' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'snprintf_s' in case of C11
+  497 |     (void)snprintf(buf, sizeof(buf), "%d.%02d",
+      |           ^~~~~~~~
+/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c:502:11: warning: Call to function 'snprintf' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'snprintf_s' in case of C11 [clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling]
+  502 |     (void)snprintf(buf, sizeof(buf), "%d.%02d",
+      |           ^~~~~~~~
+/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c:502:11: note: Call to function 'snprintf' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'snprintf_s' in case of C11
+  502 |     (void)snprintf(buf, sizeof(buf), "%d.%02d",
+      |           ^~~~~~~~
+/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c:544:23: warning: Call to function 'snprintf' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'snprintf_s' in case of C11 [clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling]
+  544 |                 (void)snprintf(buf, sizeof(buf), "%d.%02d", (int)(ppo / 1000), (int)((ppo % 1000 + 5) / 10));
+      |                       ^~~~~~~~
+/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c:544:23: note: Call to function 'snprintf' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'snprintf_s' in case of C11
+  544 |                 (void)snprintf(buf, sizeof(buf), "%d.%02d", (int)(ppo / 1000), (int)((ppo % 1000 + 5) / 10));
+      |                       ^~~~~~~~
+/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c:561:23: warning: Call to function 'snprintf' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'snprintf_s' in case of C11 [clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling]
+  561 |                 (void)snprintf(buf, sizeof(buf), "%d.%02dmv", (int)(uv / 100), (int)(uv % 100));
+      |                       ^~~~~~~~
+/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c:561:23: note: Call to function 'snprintf' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'snprintf_s' in case of C11
+  561 |                 (void)snprintf(buf, sizeof(buf), "%d.%02dmv", (int)(uv / 100), (int)(uv % 100));
+      |                       ^~~~~~~~
+/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c:586:11: warning: Call to function 'snprintf' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'snprintf_s' in case of C11 [clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling]
+  586 |     (void)snprintf(buf, sizeof(buf), "%d.%03d", (int)(abs_delta / 1000), (int)(abs_delta % 1000));
+      |           ^~~~~~~~
+/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c:586:11: note: Call to function 'snprintf' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'snprintf_s' in case of C11
+  586 |     (void)snprintf(buf, sizeof(buf), "%d.%03d", (int)(abs_delta / 1000), (int)(abs_delta % 1000));
+      |           ^~~~~~~~
+/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c:596:11: warning: Call to function 'snprintf' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'snprintf_s' in case of C11 [clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling]
+  596 |     (void)snprintf(buf, sizeof(buf), "%d.%d%d",
+      |           ^~~~~~~~
+/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c:596:11: note: Call to function 'snprintf' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'snprintf_s' in case of C11
+  596 |     (void)snprintf(buf, sizeof(buf), "%d.%d%d",
+      |           ^~~~~~~~
+/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c:603:11: warning: Call to function 'snprintf' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'snprintf_s' in case of C11 [clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling]
+  603 |     (void)snprintf(buf, sizeof(buf), "%d.%d%d",
+      |           ^~~~~~~~
+/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c:603:11: note: Call to function 'snprintf' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'snprintf_s' in case of C11
+  603 |     (void)snprintf(buf, sizeof(buf), "%d.%d%d",
+      |           ^~~~~~~~
+/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c:629:19: warning: Call to function 'snprintf' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'snprintf_s' in case of C11 [clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling]
+  629 |             (void)snprintf(buf, sizeof(buf), "%ld.%01ld", (long)depth_m, (long)depth_dm);
+      |                   ^~~~~~~~
+/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c:629:19: note: Call to function 'snprintf' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'snprintf_s' in case of C11
+  629 |             (void)snprintf(buf, sizeof(buf), "%ld.%01ld", (long)depth_m, (long)depth_dm);
+      |                   ^~~~~~~~
+/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c:632:19: warning: Call to function 'snprintf' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'snprintf_s' in case of C11 [clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling]
+  632 |             (void)snprintf(buf, sizeof(buf), "-%ld.%01ld", (long)(-depth_m), (long)(-depth_dm));
+      |                   ^~~~~~~~
+/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c:632:19: note: Call to function 'snprintf' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'snprintf_s' in case of C11
+  632 |             (void)snprintf(buf, sizeof(buf), "-%ld.%01ld", (long)(-depth_m), (long)(-depth_dm));
+      |                   ^~~~~~~~
+/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c:671:15: warning: Call to function 'snprintf' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'snprintf_s' in case of C11 [clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling]
+  671 |         (void)snprintf(buf, sizeof(buf), "%+d", (int)max_drift_signed);
+      |               ^~~~~~~~
+/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c:671:15: note: Call to function 'snprintf' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'snprintf_s' in case of C11
+  671 |         (void)snprintf(buf, sizeof(buf), "%+d", (int)max_drift_signed);
+      |               ^~~~~~~~
+/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c:730:15: warning: Call to function 'snprintf' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'snprintf_s' in case of C11 [clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling]
+  730 |         (void)snprintf(buf, sizeof(buf), "%d", (int)min_ttl);
+      |               ^~~~~~~~
+/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c:730:15: note: Call to function 'snprintf' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'snprintf_s' in case of C11
+  730 |         (void)snprintf(buf, sizeof(buf), "%d", (int)min_ttl);
+      |               ^~~~~~~~
+/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c:769:15: warning: Call to function 'snprintf' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'snprintf_s' in case of C11 [clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling]
+  769 |         (void)snprintf(time_buf, sizeof(time_buf), "%02lu.%02lu.%02lu",
+      |               ^~~~~~~~
+/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c:769:15: note: Call to function 'snprintf' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'snprintf_s' in case of C11
+  769 |         (void)snprintf(time_buf, sizeof(time_buf), "%02lu.%02lu.%02lu",
+      |               ^~~~~~~~
+/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c:788:15: warning: Call to function 'snprintf' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'snprintf_s' in case of C11 [clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling]
+  788 |         (void)snprintf(bat_buf, sizeof(bat_buf), "%d.%dv %u%%",(int)(sensor_data.battery_voltage_mv / 1000), (int)((sensor_data.battery_voltage_mv /100) % 10), (unsigned int)sensor_data.battery_percentage);
+      |               ^~~~~~~~
+/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c:788:15: note: Call to function 'snprintf' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'snprintf_s' in case of C11
+  788 |         (void)snprintf(bat_buf, sizeof(bat_buf), "%d.%dv %u%%",(int)(sensor_data.battery_voltage_mv / 1000), (int)((sensor_data.battery_voltage_mv /100) % 10), (unsigned int)sensor_data.battery_percentage);
+      |               ^~~~~~~~
+   Analyzing: screen_menu.c
+   Analyzing: screen_power_off.c
+/firmware/Drivers/CMSIS/Device/ST/STM32G4xx/Include/stm32g4xx.h:111:12: error: 'stm32g431xx.h' file not found [clang-diagnostic-error]
+  111 |   #include "stm32g431xx.h"
+      |            ^~~~~~~~~~~~~~~
+   Analyzing: screen_sensor_data.c
+/firmware/Drivers/CMSIS/Device/ST/STM32G4xx/Include/stm32g4xx.h:111:12: error: 'stm32g431xx.h' file not found [clang-diagnostic-error]
+  111 |   #include "stm32g431xx.h"
+      |            ^~~~~~~~~~~~~~~
+   Analyzing: screen_settings.c
+/firmware/Drivers/CMSIS/Device/ST/STM32G4xx/Include/stm32g4xx.h:111:12: error: 'stm32g431xx.h' file not found [clang-diagnostic-error]
+  111 |   #include "stm32g431xx.h"
+      |            ^~~~~~~~~~~~~~~
+   Analyzing: screen_startup.c
+/firmware/Drivers/CMSIS/Device/ST/STM32G4xx/Include/stm32g4xx.h:111:12: error: 'stm32g431xx.h' file not found [clang-diagnostic-error]
+  111 |   #include "stm32g431xx.h"
+      |            ^~~~~~~~~~~~~~~
+   Analyzing: screen_manager.c
+   Analyzing: sensor.c
+/firmware/Drivers/CMSIS/Device/ST/STM32G4xx/Include/stm32g4xx.h:111:12: error: 'stm32g431xx.h' file not found [clang-diagnostic-error]
+  111 |   #include "stm32g431xx.h"
+      |            ^~~~~~~~~~~~~~~
+   Analyzing: sensor_diagnostics.c
+/firmware/Drivers/CMSIS/Device/ST/STM32G4xx/Include/stm32g4xx.h:111:12: error: 'stm32g431xx.h' file not found [clang-diagnostic-error]
+  111 |   #include "stm32g431xx.h"
+      |            ^~~~~~~~~~~~~~~
+   Analyzing: settings_storage.c
+/firmware/Drivers/CMSIS/Device/ST/STM32G4xx/Include/stm32g4xx.h:111:12: error: 'stm32g431xx.h' file not found [clang-diagnostic-error]
+  111 |   #include "stm32g431xx.h"
+      |            ^~~~~~~~~~~~~~~
+   Analyzing: st7789v.c
+/firmware/Drivers/CMSIS/Device/ST/STM32G4xx/Include/stm32g4xx.h:111:12: error: 'stm32g431xx.h' file not found [clang-diagnostic-error]
+  111 |   #include "stm32g431xx.h"
+      |            ^~~~~~~~~~~~~~~
+   Analyzing: syscalls.c
+/firmware/STM32CubeIDE/Application/User/Core/syscalls.c:35:12: warning: declaration uses identifier '__io_putchar', which is a reserved identifier [bugprone-reserved-identifier]
+   35 | extern int __io_putchar(int ch) __attribute__((weak));
+      |            ^~~~~~~~~~~~
+      |            io_putchar
+/firmware/STM32CubeIDE/Application/User/Core/syscalls.c:36:12: warning: declaration uses identifier '__io_getchar', which is a reserved identifier [bugprone-reserved-identifier]
+   36 | extern int __io_getchar(void) __attribute__((weak));
+      |            ^~~~~~~~~~~~
+      |            io_getchar
+/firmware/STM32CubeIDE/Application/User/Core/syscalls.c:39:7: warning: declaration uses identifier '__env', which is a reserved identifier [bugprone-reserved-identifier]
+   39 | char *__env[1] = { 0 };
+      |       ^~~~~
+      |       env
+   40 | char **environ = __env;
+      |                  ~~~~~
+      |                  env
+/firmware/STM32CubeIDE/Application/User/Core/syscalls.c:48:5: warning: declaration uses identifier '_getpid', which is reserved in the global namespace [bugprone-reserved-identifier]
+   48 | int _getpid(void)
+      |     ^~~~~~~
+      |     getpid
+/firmware/STM32CubeIDE/Application/User/Core/syscalls.c:53:5: warning: declaration uses identifier '_kill', which is reserved in the global namespace [bugprone-reserved-identifier]
+   53 | int _kill(int pid, int sig)
+      |     ^~~~~
+      |     kill
+   54 | {
+   55 |   (void)pid;
+   56 |   (void)sig;
+   57 |   errno = EINVAL;
+   58 |   return -1;
+   59 | }
+   60 | 
+   61 | void _exit (int status)
+   62 | {
+   63 |   _kill(status, -1);
+      |   ~~~~~
+      |   kill
+/firmware/STM32CubeIDE/Application/User/Core/syscalls.c:61:6: warning: declaration uses identifier '_exit', which is reserved in the global namespace [bugprone-reserved-identifier]
+   61 | void _exit (int status)
+      |      ^~~~~
+      |      exit
+/firmware/STM32CubeIDE/Application/User/Core/syscalls.c:67:27: warning: declaration uses identifier '_read', which is reserved in the global namespace [bugprone-reserved-identifier]
+   67 | __attribute__((weak)) int _read(int file, char *ptr, int len)
+      |                           ^~~~~
+      |                           read
+/firmware/STM32CubeIDE/Application/User/Core/syscalls.c:74:14: warning: narrowing conversion from 'int' to signed type 'char' is implementation-defined [bugprone-narrowing-conversions]
+   74 |     *ptr++ = __io_getchar();
+      |              ^
+/firmware/STM32CubeIDE/Application/User/Core/syscalls.c:80:27: warning: declaration uses identifier '_write', which is reserved in the global namespace [bugprone-reserved-identifier]
+   80 | __attribute__((weak)) int _write(int file, char *ptr, int len)
+      |                           ^~~~~~
+      |                           write
+/firmware/STM32CubeIDE/Application/User/Core/syscalls.c:92:5: warning: declaration uses identifier '_close', which is reserved in the global namespace [bugprone-reserved-identifier]
+   92 | int _close(int file)
+      |     ^~~~~~
+      |     close
+/firmware/STM32CubeIDE/Application/User/Core/syscalls.c:99:5: warning: declaration uses identifier '_fstat', which is reserved in the global namespace [bugprone-reserved-identifier]
+   99 | int _fstat(int file, struct stat *st)
+      |     ^~~~~~
+      |     fstat
+/firmware/STM32CubeIDE/Application/User/Core/syscalls.c:102:17: error: use of undeclared identifier 'S_IFCHR' [clang-diagnostic-error]
+  102 |   st->st_mode = S_IFCHR;
+      |                 ^
+/firmware/STM32CubeIDE/Application/User/Core/syscalls.c:106:5: warning: declaration uses identifier '_isatty', which is reserved in the global namespace [bugprone-reserved-identifier]
+  106 | int _isatty(int file)
+      |     ^~~~~~~
+      |     isatty
+/firmware/STM32CubeIDE/Application/User/Core/syscalls.c:112:5: warning: declaration uses identifier '_lseek', which is reserved in the global namespace [bugprone-reserved-identifier]
+  112 | int _lseek(int file, int ptr, int dir)
+      |     ^~~~~~
+      |     lseek
+/firmware/STM32CubeIDE/Application/User/Core/syscalls.c:120:5: warning: declaration uses identifier '_open', which is reserved in the global namespace [bugprone-reserved-identifier]
+  120 | int _open(char *path, int flags, ...)
+      |     ^~~~~
+      |     open
+/firmware/STM32CubeIDE/Application/User/Core/syscalls.c:120:17: warning: pointer parameter 'path' can be pointer to const [readability-non-const-parameter]
+  120 | int _open(char *path, int flags, ...)
+      |                 ^
+      |           const 
+/firmware/STM32CubeIDE/Application/User/Core/syscalls.c:128:5: warning: declaration uses identifier '_wait', which is reserved in the global namespace [bugprone-reserved-identifier]
+  128 | int _wait(int *status)
+      |     ^~~~~
+      |     wait
+/firmware/STM32CubeIDE/Application/User/Core/syscalls.c:128:16: warning: pointer parameter 'status' can be pointer to const [readability-non-const-parameter]
+  128 | int _wait(int *status)
+      |                ^
+      |           const 
+/firmware/STM32CubeIDE/Application/User/Core/syscalls.c:135:5: warning: declaration uses identifier '_unlink', which is reserved in the global namespace [bugprone-reserved-identifier]
+  135 | int _unlink(char *name)
+      |     ^~~~~~~
+      |     unlink
+/firmware/STM32CubeIDE/Application/User/Core/syscalls.c:135:19: warning: pointer parameter 'name' can be pointer to const [readability-non-const-parameter]
+  135 | int _unlink(char *name)
+      |                   ^
+      |             const 
+/firmware/STM32CubeIDE/Application/User/Core/syscalls.c:142:5: warning: declaration uses identifier '_times', which is reserved in the global namespace [bugprone-reserved-identifier]
+  142 | int _times(struct tms *buf)
+      |     ^~~~~~
+      |     times
+/firmware/STM32CubeIDE/Application/User/Core/syscalls.c:148:5: warning: declaration uses identifier '_stat', which is reserved in the global namespace [bugprone-reserved-identifier]
+  148 | int _stat(char *file, struct stat *st)
+      |     ^~~~~
+      |     stat
+/firmware/STM32CubeIDE/Application/User/Core/syscalls.c:148:17: warning: pointer parameter 'file' can be pointer to const [readability-non-const-parameter]
+  148 | int _stat(char *file, struct stat *st)
+      |                 ^
+      |           const 
+/firmware/STM32CubeIDE/Application/User/Core/syscalls.c:151:17: error: use of undeclared identifier 'S_IFCHR' [clang-diagnostic-error]
+  151 |   st->st_mode = S_IFCHR;
+      |                 ^
+/firmware/STM32CubeIDE/Application/User/Core/syscalls.c:155:5: warning: declaration uses identifier '_link', which is reserved in the global namespace [bugprone-reserved-identifier]
+  155 | int _link(char *old, char *new)
+      |     ^~~~~
+      |     link
+/firmware/STM32CubeIDE/Application/User/Core/syscalls.c:155:17: warning: pointer parameter 'old' can be pointer to const [readability-non-const-parameter]
+  155 | int _link(char *old, char *new)
+      |                 ^
+      |           const 
+/firmware/STM32CubeIDE/Application/User/Core/syscalls.c:155:28: warning: pointer parameter 'new' can be pointer to const [readability-non-const-parameter]
+  155 | int _link(char *old, char *new)
+      |                            ^
+      |                      const 
+/firmware/STM32CubeIDE/Application/User/Core/syscalls.c:163:5: warning: declaration uses identifier '_fork', which is reserved in the global namespace [bugprone-reserved-identifier]
+  163 | int _fork(void)
+      |     ^~~~~
+      |     fork
+/firmware/STM32CubeIDE/Application/User/Core/syscalls.c:169:5: warning: declaration uses identifier '_execve', which is reserved in the global namespace [bugprone-reserved-identifier]
+  169 | int _execve(char *name, char **argv, char **env)
+      |     ^~~~~~~
+      |     execve
+/firmware/STM32CubeIDE/Application/User/Core/syscalls.c:169:19: warning: pointer parameter 'name' can be pointer to const [readability-non-const-parameter]
+  169 | int _execve(char *name, char **argv, char **env)
+      |                   ^
+      |             const 
+   Analyzing: sysmem.c
+/firmware/STM32CubeIDE/Application/User/Core/sysmem.c:30:17: warning: declaration uses identifier '__sbrk_heap_end', which is a reserved identifier [bugprone-reserved-identifier]
+   30 | static uint8_t *__sbrk_heap_end = NULL;
+      |                 ^~~~~~~~~~~~~~~
+      |                 sbrk_heap_end
+/firmware/STM32CubeIDE/Application/User/Core/sysmem.c:30:35: error: use of undeclared identifier 'NULL' [clang-diagnostic-error]
+   30 | static uint8_t *__sbrk_heap_end = NULL;
+      |                                   ^
+/firmware/STM32CubeIDE/Application/User/Core/sysmem.c:53:7: warning: declaration uses identifier '_sbrk', which is reserved in the global namespace [bugprone-reserved-identifier]
+   53 | void *_sbrk(ptrdiff_t incr)
+      |       ^~~~~
+      |       sbrk
+/firmware/STM32CubeIDE/Application/User/Core/sysmem.c:53:13: error: unknown type name 'ptrdiff_t' [clang-diagnostic-error]
+   53 | void *_sbrk(ptrdiff_t incr)
+      |             ^
+/firmware/STM32CubeIDE/Application/User/Core/sysmem.c:55:18: warning: declaration uses identifier '_end', which is reserved in the global namespace [bugprone-reserved-identifier]
+   55 |   extern uint8_t _end; /* Symbol defined in the linker script */
+      |                  ^~~~
+      |                  end
+   56 |   extern uint8_t _estack; /* Symbol defined in the linker script */
+   57 |   extern uint32_t _Min_Stack_Size; /* Symbol defined in the linker script */
+   58 |   const uint32_t stack_limit = (uint32_t)&_estack - (uint32_t)&_Min_Stack_Size;
+   59 |   const uint8_t *max_heap = (uint8_t *)stack_limit;
+   60 |   uint8_t *prev_heap_end;
+   61 | 
+   62 |   /* Initialize heap end at first call */
+   63 |   if (NULL == __sbrk_heap_end)
+   64 |   {
+   65 |     __sbrk_heap_end = &_end;
+      |                        ~~~~
+      |                        end
+/firmware/STM32CubeIDE/Application/User/Core/sysmem.c:56:18: warning: declaration uses identifier '_estack', which is reserved in the global namespace [bugprone-reserved-identifier]
+   56 |   extern uint8_t _estack; /* Symbol defined in the linker script */
+      |                  ^~~~~~~
+      |                  estack
+   57 |   extern uint32_t _Min_Stack_Size; /* Symbol defined in the linker script */
+   58 |   const uint32_t stack_limit = (uint32_t)&_estack - (uint32_t)&_Min_Stack_Size;
+      |                                           ~~~~~~~
+      |                                           estack
+/firmware/STM32CubeIDE/Application/User/Core/sysmem.c:57:19: warning: declaration uses identifier '_Min_Stack_Size', which is a reserved identifier [bugprone-reserved-identifier]
+   57 |   extern uint32_t _Min_Stack_Size; /* Symbol defined in the linker script */
+      |                   ^~~~~~~~~~~~~~~
+      |                   Min_Stack_Size
+   58 |   const uint32_t stack_limit = (uint32_t)&_estack - (uint32_t)&_Min_Stack_Size;
+      |                                                                ~~~~~~~~~~~~~~~
+      |                                                                Min_Stack_Size
+/firmware/STM32CubeIDE/Application/User/Core/sysmem.c:58:32: warning: cast to smaller integer type 'uint32_t' (aka 'unsigned int') from 'uint8_t *' (aka 'unsigned char *') [clang-diagnostic-pointer-to-int-cast]
+   58 |   const uint32_t stack_limit = (uint32_t)&_estack - (uint32_t)&_Min_Stack_Size;
+      |                                ^~~~~~~~~~~~~~~~~~
+/firmware/STM32CubeIDE/Application/User/Core/sysmem.c:58:53: warning: cast to smaller integer type 'uint32_t' (aka 'unsigned int') from 'uint32_t *' (aka 'unsigned int *') [clang-diagnostic-pointer-to-int-cast]
+   58 |   const uint32_t stack_limit = (uint32_t)&_estack - (uint32_t)&_Min_Stack_Size;
+      |                                                     ^~~~~~~~~~~~~~~~~~~~~~~~~~
+/firmware/STM32CubeIDE/Application/User/Core/sysmem.c:59:29: warning: cast to 'uint8_t *' (aka 'unsigned char *') from smaller integer type 'uint32_t' (aka 'unsigned int') [clang-diagnostic-int-to-pointer-cast]
+   59 |   const uint8_t *max_heap = (uint8_t *)stack_limit;
+      |                             ^~~~~~~~~~~~~~~~~~~~~~
+/firmware/STM32CubeIDE/Application/User/Core/sysmem.c:63:7: error: use of undeclared identifier 'NULL' [clang-diagnostic-error]
+   63 |   if (NULL == __sbrk_heap_end)
+      |       ^
+   Analyzing: w25q128.c
+/firmware/Drivers/CMSIS/Device/ST/STM32G4xx/Include/stm32g4xx.h:111:12: error: 'stm32g431xx.h' file not found [clang-diagnostic-error]
+  111 |   #include "stm32g431xx.h"
+      |            ^~~~~~~~~~~~~~~
+   Analyzing: warning.c
+/firmware/Drivers/CMSIS/Device/ST/STM32G4xx/Include/stm32g4xx.h:111:12: error: 'stm32g431xx.h' file not found [clang-diagnostic-error]
+  111 |   #include "stm32g431xx.h"
+      |            ^~~~~~~~~~~~~~~
+   Analyzing: screen_calibration.c
+/firmware/Drivers/CMSIS/Device/ST/STM32G4xx/Include/stm32g4xx.h:111:12: error: 'stm32g431xx.h' file not found [clang-diagnostic-error]
+  111 |   #include "stm32g431xx.h"
+      |            ^~~~~~~~~~~~~~~
+   Analyzing: screen_dive_log.c
+   Analyzing: screen_main.c
+/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c:497:11: warning: Call to function 'snprintf' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'snprintf_s' in case of C11 [clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling]
+  497 |     (void)snprintf(buf, sizeof(buf), "%d.%02d",
+      |           ^~~~~~~~
+/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c:497:11: note: Call to function 'snprintf' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'snprintf_s' in case of C11
+  497 |     (void)snprintf(buf, sizeof(buf), "%d.%02d",
+      |           ^~~~~~~~
+/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c:502:11: warning: Call to function 'snprintf' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'snprintf_s' in case of C11 [clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling]
+  502 |     (void)snprintf(buf, sizeof(buf), "%d.%02d",
+      |           ^~~~~~~~
+/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c:502:11: note: Call to function 'snprintf' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'snprintf_s' in case of C11
+  502 |     (void)snprintf(buf, sizeof(buf), "%d.%02d",
+      |           ^~~~~~~~
+/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c:544:23: warning: Call to function 'snprintf' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'snprintf_s' in case of C11 [clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling]
+  544 |                 (void)snprintf(buf, sizeof(buf), "%d.%02d", (int)(ppo / 1000), (int)((ppo % 1000 + 5) / 10));
+      |                       ^~~~~~~~
+/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c:544:23: note: Call to function 'snprintf' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'snprintf_s' in case of C11
+  544 |                 (void)snprintf(buf, sizeof(buf), "%d.%02d", (int)(ppo / 1000), (int)((ppo % 1000 + 5) / 10));
+      |                       ^~~~~~~~
+/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c:561:23: warning: Call to function 'snprintf' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'snprintf_s' in case of C11 [clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling]
+  561 |                 (void)snprintf(buf, sizeof(buf), "%d.%02dmv", (int)(uv / 100), (int)(uv % 100));
+      |                       ^~~~~~~~
+/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c:561:23: note: Call to function 'snprintf' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'snprintf_s' in case of C11
+  561 |                 (void)snprintf(buf, sizeof(buf), "%d.%02dmv", (int)(uv / 100), (int)(uv % 100));
+      |                       ^~~~~~~~
+/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c:586:11: warning: Call to function 'snprintf' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'snprintf_s' in case of C11 [clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling]
+  586 |     (void)snprintf(buf, sizeof(buf), "%d.%03d", (int)(abs_delta / 1000), (int)(abs_delta % 1000));
+      |           ^~~~~~~~
+/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c:586:11: note: Call to function 'snprintf' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'snprintf_s' in case of C11
+  586 |     (void)snprintf(buf, sizeof(buf), "%d.%03d", (int)(abs_delta / 1000), (int)(abs_delta % 1000));
+      |           ^~~~~~~~
+/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c:596:11: warning: Call to function 'snprintf' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'snprintf_s' in case of C11 [clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling]
+  596 |     (void)snprintf(buf, sizeof(buf), "%d.%d%d",
+      |           ^~~~~~~~
+/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c:596:11: note: Call to function 'snprintf' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'snprintf_s' in case of C11
+  596 |     (void)snprintf(buf, sizeof(buf), "%d.%d%d",
+      |           ^~~~~~~~
+/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c:603:11: warning: Call to function 'snprintf' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'snprintf_s' in case of C11 [clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling]
+  603 |     (void)snprintf(buf, sizeof(buf), "%d.%d%d",
+      |           ^~~~~~~~
+/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c:603:11: note: Call to function 'snprintf' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'snprintf_s' in case of C11
+  603 |     (void)snprintf(buf, sizeof(buf), "%d.%d%d",
+      |           ^~~~~~~~
+/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c:629:19: warning: Call to function 'snprintf' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'snprintf_s' in case of C11 [clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling]
+  629 |             (void)snprintf(buf, sizeof(buf), "%ld.%01ld", (long)depth_m, (long)depth_dm);
+      |                   ^~~~~~~~
+/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c:629:19: note: Call to function 'snprintf' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'snprintf_s' in case of C11
+  629 |             (void)snprintf(buf, sizeof(buf), "%ld.%01ld", (long)depth_m, (long)depth_dm);
+      |                   ^~~~~~~~
+/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c:632:19: warning: Call to function 'snprintf' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'snprintf_s' in case of C11 [clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling]
+  632 |             (void)snprintf(buf, sizeof(buf), "-%ld.%01ld", (long)(-depth_m), (long)(-depth_dm));
+      |                   ^~~~~~~~
+/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c:632:19: note: Call to function 'snprintf' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'snprintf_s' in case of C11
+  632 |             (void)snprintf(buf, sizeof(buf), "-%ld.%01ld", (long)(-depth_m), (long)(-depth_dm));
+      |                   ^~~~~~~~
+/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c:671:15: warning: Call to function 'snprintf' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'snprintf_s' in case of C11 [clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling]
+  671 |         (void)snprintf(buf, sizeof(buf), "%+d", (int)max_drift_signed);
+      |               ^~~~~~~~
+/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c:671:15: note: Call to function 'snprintf' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'snprintf_s' in case of C11
+  671 |         (void)snprintf(buf, sizeof(buf), "%+d", (int)max_drift_signed);
+      |               ^~~~~~~~
+/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c:730:15: warning: Call to function 'snprintf' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'snprintf_s' in case of C11 [clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling]
+  730 |         (void)snprintf(buf, sizeof(buf), "%d", (int)min_ttl);
+      |               ^~~~~~~~
+/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c:730:15: note: Call to function 'snprintf' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'snprintf_s' in case of C11
+  730 |         (void)snprintf(buf, sizeof(buf), "%d", (int)min_ttl);
+      |               ^~~~~~~~
+/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c:769:15: warning: Call to function 'snprintf' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'snprintf_s' in case of C11 [clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling]
+  769 |         (void)snprintf(time_buf, sizeof(time_buf), "%02lu.%02lu.%02lu",
+      |               ^~~~~~~~
+/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c:769:15: note: Call to function 'snprintf' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'snprintf_s' in case of C11
+  769 |         (void)snprintf(time_buf, sizeof(time_buf), "%02lu.%02lu.%02lu",
+      |               ^~~~~~~~
+/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c:788:15: warning: Call to function 'snprintf' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'snprintf_s' in case of C11 [clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling]
+  788 |         (void)snprintf(bat_buf, sizeof(bat_buf), "%d.%dv %u%%",(int)(sensor_data.battery_voltage_mv / 1000), (int)((sensor_data.battery_voltage_mv /100) % 10), (unsigned int)sensor_data.battery_percentage);
+      |               ^~~~~~~~
+/firmware/STM32CubeIDE/Application/User/Core/screens/screen_main.c:788:15: note: Call to function 'snprintf' is insecure as it does not provide security checks introduced in the C11 standard. Replace with analogous functions that support length arguments or provides boundary checks such as 'snprintf_s' in case of C11
+  788 |         (void)snprintf(bat_buf, sizeof(bat_buf), "%d.%dv %u%%",(int)(sensor_data.battery_voltage_mv / 1000), (int)((sensor_data.battery_voltage_mv /100) % 10), (unsigned int)sensor_data.battery_percentage);
+      |               ^~~~~~~~
+   Analyzing: screen_menu.c
+   Analyzing: screen_power_off.c
+/firmware/Drivers/CMSIS/Device/ST/STM32G4xx/Include/stm32g4xx.h:111:12: error: 'stm32g431xx.h' file not found [clang-diagnostic-error]
+  111 |   #include "stm32g431xx.h"
+      |            ^~~~~~~~~~~~~~~
+   Analyzing: screen_sensor_data.c
+/firmware/Drivers/CMSIS/Device/ST/STM32G4xx/Include/stm32g4xx.h:111:12: error: 'stm32g431xx.h' file not found [clang-diagnostic-error]
+  111 |   #include "stm32g431xx.h"
+      |            ^~~~~~~~~~~~~~~
+   Analyzing: screen_settings.c
+/firmware/Drivers/CMSIS/Device/ST/STM32G4xx/Include/stm32g4xx.h:111:12: error: 'stm32g431xx.h' file not found [clang-diagnostic-error]
+  111 |   #include "stm32g431xx.h"
+      |            ^~~~~~~~~~~~~~~
+   Analyzing: screen_startup.c
+/firmware/Drivers/CMSIS/Device/ST/STM32G4xx/Include/stm32g4xx.h:111:12: error: 'stm32g431xx.h' file not found [clang-diagnostic-error]
+  111 |   #include "stm32g431xx.h"
+      |            ^~~~~~~~~~~~~~~

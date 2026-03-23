@@ -11,9 +11,12 @@ STM32CubeIDE/Drivers/STM32G4xx_HAL_Driver/
 # ── STM32CubeIDE workspace metadata ─────────────────────────────────────────
 .metadata/
 .settings/
+docker/
+scripts/
 
 # ── Claude Code internal directory ──────────────────────────────────────────
 .claude/
+CLAUDE.md
 
 # ── Generic build artefacts (belt-and-suspenders) ───────────────────────────
 *.o
