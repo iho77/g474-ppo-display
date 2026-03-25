@@ -37,6 +37,7 @@
 #include "ms5837.h"
 #include "w25q128.h"
 #include "warning.h"
+#include "dive_log.h"
 
 /* USER CODE END Includes */
 
@@ -76,7 +77,7 @@ uint32_t g_elapsed_time_sec = 0;
 
 
 static volatile uint32_t g_ms = 0; // ms since boot (from 1kHz tick)
-static volatile uint32_t g_ms1 = 0;
+static bool g_debugger_connected = false; // cached once at boot; DHCSR doesn't change at runtime
 
 static volatile atomic_bool g_flag_1hz = false;
 static volatile atomic_bool g_flag_5ms = false;
@@ -208,24 +209,6 @@ static void MX_IWDG_Init(void);
 /* USER CODE BEGIN PFP */
 void vibro_motor_test(void);
 
-/* Private function prototypes -----------------------------------------------*/
-void SystemClock_Config(void);
-static void MX_GPIO_Init(void);
-static void MX_DMA_Init(void);
-static void MX_ADC2_Init(void);
-static void MX_TIM6_Init(void);
-static void MX_ADC1_Init(void);
-static void MX_OPAMP3_Init(void);
-static void MX_OPAMP2_Init(void);
-static void MX_TIM3_Init(void);
-static void MX_OPAMP1_Init(void);
-static void MX_SPI1_Init(void);
-static void MX_TIM2_Init(void);
-static void MX_I2C1_Init(void);
-static void MX_SPI2_Init(void);
-void ui_init(lv_disp_t *disp);
-void LVGL_Task(void const *argument);
-
 static void scheduler_tick_1kHz(void);
 static void scheduler_tick_5ms(void);
 static void scheduler_tick_20ms(void);
@@ -260,14 +243,11 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
 
 
 static void scheduler_tick_5ms(void){
-	g_ms1++;
-
 		static uint32_t t1 = 0;
-		if ((g_ms1 - t1) >= 5) {
-			t1 = g_ms1;
+		if ((g_ms - t1) >= 5) {
+			t1 = g_ms;
 			atomic_store(&g_flag_5ms, true);
 		}
-
 }
 
 static void scheduler_tick_20ms(void) {
@@ -516,27 +496,6 @@ void HAL_I2C_ErrorCallback(I2C_HandleTypeDef *hi2c)
     ms5837_last_meas = g_ms;  /* back off 1 s before next attempt */
 }
 
-/* MS5837 blocking diagnostic — remove after I2C confirmed working.
- * dbg_step increments after EVERY individual TX or RX so the exact
- * failing operation is visible in the debugger watch window.
- *
- * Step map:
- *   1  = Reset TX ok
- *   2  = PROM TX ok (last word, i=6)        [C[0..6] populated]
- *   3  = Conv-D2 TX ok
- *   4  = 20 ms delay done
- *   5  = ADC-READ TX ok  (0x00 sent)         <-- key sub-step
- *   6  = ADC-READ RX ok  (D2 populated)
- *   7  = Conv-D1 TX ok
- *   8  = 20 ms delay done
- *   9  = ADC-READ TX ok  (0x00 sent)
- *  10  = ADC-READ RX ok  (D1 populated)  → all good, problem is DMA/IT
- *
- * dbg_hal_err: hi2c1.ErrorCode at point of failure.
- *   0x04 = NACK (AF), 0x20 = timeout, 0x01 = bus error.
- */
-
-
 
 /* USER CODE END 0 */
 
@@ -588,6 +547,8 @@ int main(void)
   MX_IWDG_Init();
   /* USER CODE BEGIN 2 */
 
+  g_debugger_connected = (isDebuggerConnected() != 0);
+
   /* DEBUG: uncomment to test vibro motor hardware before main loop */
 //  vibro_motor_test();
 
@@ -638,6 +599,9 @@ int main(void)
 
   	/* Initialize external flash storage (W25Q128 + calibration log scan) */
   	ext_flash_storage_init(&hspi1);
+
+  	/* Initialize dive log (metadata ping-pong recovery + write pointer scan) */
+  	dive_log_init(&hspi1);
 
   	// DIAGNOSTIC: Uncomment next line to erase settings and start fresh
   	// settings_erase();
@@ -714,13 +678,10 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
 
-		ms5837_fsm_tick();
-
 		if (atomic_exchange(&g_flag_5ms, false)) {
-
+			ms5837_fsm_tick();
 			lv_timer_handler();
 			vibro_tick_5ms();
-
 		}
 
 		if (atomic_exchange(&g_flag_20ms, false)) {
@@ -751,8 +712,10 @@ int main(void)
 
 		if (atomic_exchange(&g_adc4_new, false)) {
 
-			/* Copy both DMA values atomically — ADC4 DMA runs continuously in circular mode;
-			 * reading [0] then [1] without protection risks a torn pair across a half-transfer */
+			/* Copy both DMA values atomically — ADC4 DMA runs in circular mode;
+			 * reading [0] then [1] risks a torn pair across a half-transfer.
+			 * ADC1–3 use single-element arrays: each DMA write is one 16-bit
+			 * store (atomic on Cortex-M4), so no masking is needed there. */
 			__disable_irq();
 			uint16_t adc4_vref = ADC4_VAL[0];
 			uint16_t adc4_bat  = ADC4_VAL[1];
@@ -771,14 +734,15 @@ int main(void)
 				g_elapsed_time_sec++;
 			}
 			screen_manager_update();
+			dive_log_tick_1hz(g_elapsed_time_sec);
 			/* Auto-shutdown: battery < 10% for 3 consecutive seconds */
 			static uint8_t low_bat_count = 0;
 			if (sensor_data.battery_percentage < 10U
-					&& isDebuggerConnected() == 0) {
+					&& !g_debugger_connected) {
 				low_bat_count++;
 				if (low_bat_count >= 3U) {
-					//HAL_Delay(500);
-					//system_shutdown();
+					HAL_Delay(500);
+					system_shutdown();
 				}
 			} else {
 				low_bat_count = 0;
@@ -797,7 +761,7 @@ int main(void)
 			}
 		}
 
-		if (!isDebuggerConnected()) {
+		if (!g_debugger_connected) {
 			__WFI();
 		}
 	}

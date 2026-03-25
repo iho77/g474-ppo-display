@@ -1,5 +1,20 @@
 # Resolved Findings
 
+## Resolution Batch — 2026-03-25
+
+**Scope:** `dive_log.c` | **Severity floor:** MEDIUM (manual audit findings)
+
+### Fixed
+
+| # | Finding | File | Fix Applied |
+|---|---------|------|-------------|
+| DL-1 | MEDIUM — deferred erase return ignored; `pending_erase_addr` cleared even on SPI failure | `dive_log.c:303` | Wrapped `w25q128_erase_sector` in `if (... == W25Q128_OK)` guard; failed erases now retry on the next 1 Hz surface tick |
+| DL-2 | MEDIUM — `log_id++` and `dive_active = true` committed before confirming `entry_write` success | `dive_log.c:309–330` | Restructured dive-start block: snapshot PPO first, call `entry_write`, only update `log_id` / `dive_active` / `prev_*` inside the success branch |
+| DL-3 | MEDIUM — `int32_t o2_s_ppo[i]` cast to `uint16_t` without negative guard; sensor fault producing negative PPO wraps to 65535 and causes runaway 1 Hz logging | `dive_log.c:358,317,373` | Added `raw > 0` guard at all three cast sites; negative PPO stores as 0 |
+| DL-4 | MEDIUM — `depth_mm` (int32_t) divided and cast to `uint16_t` without upper-bound clamp; EMI bit-flip could produce unexpected depth value | `dive_log.c:297` | Added intermediate `uint32_t depth_mm_u` with clamp to `655350` (65535 cm × 10) before division |
+
+---
+
 ## Resolution Batch — 2026-03-23
 
 **Scope:** All modules | **Severity floor:** All (CRITICAL → LOW)
