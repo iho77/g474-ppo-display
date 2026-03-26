@@ -611,14 +611,7 @@ void screen_main_update(void) {
     // ========================================================================
     buf[0] = '\0';
     if (sensor_data.pressure.pressure_valid) {
-        // Calculate depth from pressure difference
-        int32_t depth_mm = pressure_sensor_calculate_depth_mm(
-            sensor_data.pressure.pressure_mbar,
-            sensor_data.pressure.surface_pressure_mbar
-        );
-
-        // Update depth in sensor data for external access
-        sensor_data.pressure.depth_mm = depth_mm;
+        int32_t depth_mm = sensor_data.pressure.depth_mm;
 
         // Convert mm to meters with 1 decimal place
         int32_t depth_m = depth_mm / 1000;

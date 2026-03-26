@@ -302,3 +302,59 @@ volatile uint32_t g_dbg_dma_complete = 0;
 | DMA flush too early | Screen frozen | Call `lv_disp_flush_ready()` in DMA callback |
 | New .c not in build | Undefined reference | First build in STM32CubeIDE IDE |
 | HAL re-init | Display noise, DMA corruption | Never re-init, only start/stop |
+
+---
+
+## Type Safety Patterns
+
+These patterns address the three recurring static analysis findings across this codebase.
+
+### 1. Narrowing Conversions — Always Cast Explicitly
+
+Integer arithmetic in C promotes to `int`. Assigning back to a narrower type (`int8_t`, `int16_t`, `lv_coord_t`) is implementation-defined if the value overflows. Always cast explicitly so the intent is visible and the truncation is deliberate.
+
+```c
+// WRONG — implicit narrowing, implementation-defined if > 127:
+int8_t x = some_int8 + 2;
+
+// CORRECT — explicit, intent is clear:
+int8_t x = (int8_t)(some_int8 + 2);
+
+// WRONG — lv_coord_t is int16_t, arithmetic is int:
+lv_obj_set_pos(obj, 10, 22 + i * 18);
+
+// CORRECT:
+lv_obj_set_pos(obj, (lv_coord_t)10, (lv_coord_t)(22 + i * 18));
+```
+
+### 2. Multiplication Widening — Cast Before Multiply, Not After
+
+When multiplying values that could overflow the source type, cast the first operand to the wider type **before** the multiply. Casting the result after is too late — the overflow already happened.
+
+```c
+// WRONG — multiply in uint32_t, then assign to int32_t (signed overflow undefined):
+int32_t result = voltage_uv * 3U;
+
+// CORRECT — explicit cast makes the sign conversion visible:
+int32_t result = (int32_t)(voltage_uv * 3U);
+
+// WRONG — macro result implicitly widens:
+uint32_t val = SOME_MACRO(a, b, c);
+
+// CORRECT — explicit cast documents the expected sign/width:
+uint32_t val = (uint32_t)SOME_MACRO(a, b, c);
+```
+
+### 3. `memset` / `snprintf` — Suppress, Never Replace
+
+`memset_s` and `snprintf_s` are **not available** in ARM newlib nano (`--specs=nano.specs`). clang-tidy fires `insecureAPI.DeprecatedOrUnsafeBufferHandling` on every use of `memset`/`snprintf` in application code. These are **false positives** on this platform.
+
+- **Do not** replace `memset` with `memset_s` — it will not compile
+- **Do not** replace `snprintf` with `snprintf_s` — it will not compile
+- **Do** use `snprintf(buf, sizeof(buf), ...)` — explicit size IS the correct bounded form
+- **Do** suppress new findings with the standard justification in `suppressed.md`:
+
+```
+False positive on embedded target. `memset_s`/`snprintf_s` not available in ARM newlib nano
+(--specs=nano.specs). `memset`/`snprintf` with explicit size is the correct safe pattern.
+```

@@ -107,10 +107,6 @@ const uint16_t backlight_gamma_lut[11] = {
 
 uint32_t vref_effective_mv = 3300;     // == VDDA in mV
 
-// OPAMP offset calibration results (volatile to prevent optimizer from removing)
-volatile uint16_t offset_counts_ch1 = 0;  // for OPAMP2 -> ADC_CHANNEL_VOPAMP2
-volatile uint16_t offset_counts_ch2 = 0; // for OPAMP3 -> ADC_CHANNEL_VOPAMP3_ADC2
-
 // Debug: Store VREFINT raw reading for troubleshooting
 uint16_t vrefint_raw_debug = 0;
 
@@ -214,9 +210,12 @@ static void scheduler_tick_5ms(void);
 static void scheduler_tick_20ms(void);
 static void scheduler_tick_10s(void);
 
-HAL_StatusTypeDef adc2_calculate_offsets_two_gain(void);
 void system_shutdown(void);  // Power management
 
+
+static bool emulate_profile = false;
+static bool emulate_descend = true;
+static int8_t emulate_depth = 0;
 
 /* USER CODE END PFP */
 
@@ -296,50 +295,59 @@ void HAL_SPI_TxCpltCallback(SPI_HandleTypeDef *hspi)
 }
 
 /**
- * @brief System shutdown - Stop peripherals and enter low-power mode
- * @note Wakes on PA8 (BTN_M) press, performs full system reset
+ * @brief System shutdown - Stop peripherals and enter Stop1 mode
+ * @note Wakes on PA2 (BTN_M) via EXTI2 (already enabled by MX_GPIO_Init).
+ *       GPIO state is retained in Stop1. On wake: full system reset for clean boot.
+ *       IWDG continues in Stop1 — refreshed here to give the full ~6s window.
+ *       Set option byte IWDG_STOP=0 in CubeProgrammer to freeze IWDG in Stop mode.
  */
 void system_shutdown(void) {
-    // Step 1: Turn off LCD backlight (TIM2_CH3 on PA9)
+    // Step 1: Put display to sleep via SPI (must happen before peripherals stop)
+    // DISPOFF turns off panel output; SLPIN enters sleep (screen goes dark).
+    // GPIO state is retained in Stop1 so CS/RST held here remain valid.
+    ST7789V_SendCmd(ST7789_DISPOFF, NULL, 0);
+    HAL_Delay(20);
+    ST7789V_SendCmd(ST7789_SLPIN, NULL, 0);
+    HAL_Delay(120);  // Required post-SLPIN settling per ST7789V datasheet
+    HAL_GPIO_WritePin(TFT_CS_GPIO_Port,  TFT_CS_Pin,  GPIO_PIN_SET);   // Deselect
+    HAL_GPIO_WritePin(TFT_RST_GPIO_Port, TFT_RST_Pin, GPIO_PIN_SET);   // Not in reset
+
+    // Step 2: Turn off LCD backlight (TIM2_CH3 on TFT_BLK/PA9)
     HAL_TIM_PWM_Stop(&htim2, TIM_CHANNEL_3);
     __HAL_TIM_SET_COMPARE(&htim2, TIM_CHANNEL_3, 0);
-
-    // Reconfigure PA2 (TIM2_CH3 backlight) as GPIO output LOW
     GPIO_InitTypeDef GPIO_InitStruct = {0};
-    GPIO_InitStruct.Pin = GPIO_PIN_2;
-    GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
-    GPIO_InitStruct.Pull = GPIO_NOPULL;
+    GPIO_InitStruct.Pin   = TFT_BLK_Pin;
+    GPIO_InitStruct.Mode  = GPIO_MODE_OUTPUT_PP;
+    GPIO_InitStruct.Pull  = GPIO_NOPULL;
     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-    HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
-    HAL_GPIO_WritePin(GPIOA, GPIO_PIN_2, GPIO_PIN_RESET);
+    HAL_GPIO_Init(TFT_BLK_GPIO_Port, &GPIO_InitStruct);
+    HAL_GPIO_WritePin(TFT_BLK_GPIO_Port, TFT_BLK_Pin, GPIO_PIN_RESET);
 
-    // Step 2: Stop all peripherals
+    // Step 3: Stop all peripherals
     HAL_ADC_Stop_DMA(&hadc1);
     HAL_ADC_Stop_DMA(&hadc2);
+    HAL_ADC_Stop_DMA(&hadc3);
+    HAL_ADC_Stop_DMA(&hadc4);
     HAL_TIM_Base_Stop_IT(&htim6);  // 1kHz scheduler
     HAL_TIM_Base_Stop(&htim3);     // ADC2 trigger
     HAL_OPAMP_Stop(&hopamp1);
     HAL_OPAMP_Stop(&hopamp2);
     HAL_OPAMP_Stop(&hopamp3);
 
-    // Step 3: Set GPIO to low-power state
-    HAL_GPIO_WritePin(TFT_CS_GPIO_Port, TFT_CS_Pin, GPIO_PIN_RESET);
-    HAL_GPIO_WritePin(TFT_DC_GPIO_Port, TFT_DC_Pin, GPIO_PIN_RESET);
-    HAL_GPIO_WritePin(TFT_RST_GPIO_Port, TFT_RST_Pin, GPIO_PIN_RESET);
-
-    // Step 4: Configure wake-up source (PA8 via EXTI)
+    // Step 4: Clear pending BTN_M (PA2/EXTI2) flag — EXTI2_IRQn already enabled
     __HAL_PWR_CLEAR_FLAG(PWR_FLAG_WU);
-    __HAL_GPIO_EXTI_CLEAR_IT(GPIO_PIN_8);
-    HAL_NVIC_EnableIRQ(EXTI9_5_IRQn);
+    __HAL_GPIO_EXTI_CLEAR_IT(BTN_M_Pin);
 
     // Step 5: Enter Stop1 mode (~2 µA)
+    // Refresh IWDG for full ~6s window (freeze with IWDG_STOP=0 option byte for indefinite sleep)
+    HAL_IWDG_Refresh(&hiwdg);
     HAL_SuspendTick();
     HAL_PWREx_EnterSTOP1Mode(PWR_STOPENTRY_WFI);
 
-    // Step 6: Wake-up handling (after BTN_M press)
-    SystemClock_Config();  // Restore clocks after Stop mode
+    // Step 6: Wake-up — restore clocks and do a clean reset
+    SystemClock_Config();
     HAL_ResumeTick();
-    NVIC_SystemReset();    // Full restart for clean boot
+    NVIC_SystemReset();
 }
 
 /**
@@ -391,12 +399,14 @@ static void ms5837_fsm_tick(void)
             ms5837_calculate(&ms5837_calib, ms5837_raw_D1, ms5837_raw_D2, &ms5837_data);
             {
                 int32_t scaled_p = ms5837_data.pressure_mbar * 100;
+                /* Four pressure fields written from main-loop context only.
+                 * If any field is ever read from ISR, wrap in __disable_irq()/__enable_irq(). */
                 sensor_data.pressure.pressure_mbar = scaled_p;
                 sensor_data.pressure.temperature_c =
                     (int16_t)(ms5837_data.temperature_c100 / 100);
-                sensor_data.pressure.depth_mm =
+                sensor_data.pressure.depth_mm = (!emulate_profile)?
                     pressure_sensor_calculate_depth_mm(
-                        scaled_p, sensor_data.pressure.surface_pressure_mbar);
+                        scaled_p, sensor_data.pressure.surface_pressure_mbar):emulate_depth*1000;
                 sensor_data.pressure.pressure_valid = true;
             }
             ms5837_last_meas = g_ms;
@@ -579,9 +589,6 @@ int main(void)
   	HAL_ADC_Start_DMA(&hadc4, (uint32_t*) ADC4_VAL, 2);
 
 
-  	// SPI2_LoopbackTest();
-
-
   	w25q128_init(&hspi1);     /* CS_HIGH + software reset before first use */
 
 
@@ -616,8 +623,10 @@ int main(void)
 
   	// Apply LCD brightness via PWM (TIM2 CH1 on PA15) with gamma correction
   	uint8_t brightness = sensor_data.settings.lcd_brightness;
+  	/* brightness valid range 0–100 from settings_validate(); gamma_index 0–10.
+  	 * Clamp guards against invalid stored settings (e.g. brightness=255 → gamma_index=25). */
   	uint8_t gamma_index = brightness / 10;  // 10% → index 1, 100% → index 10
-  	if (gamma_index > 10) gamma_index = 10;  // Clamp to max index
+  	if (gamma_index > 10) gamma_index = 10;
   	uint16_t pwm_value = backlight_gamma_lut[gamma_index];
 
   	// Set compare value before starting PWM
@@ -649,6 +658,7 @@ int main(void)
   		disp_drv.draw_buf = &disp_draw_buf;
 
   		lv_disp_t *disp = lv_disp_drv_register(&disp_drv);
+  		if (disp == NULL) { Error_Handler(); }
   		ST7789V_SetDisplay(disp);
 
   		// v8: lv_scr_act() instead of lv_screen_active()
@@ -750,6 +760,12 @@ int main(void)
 		}
 
 		if (atomic_exchange(&g_flag_10s, false)) {
+
+			if (emulate_profile){
+				emulate_depth = (emulate_descend) ? (int8_t)(emulate_depth + 2) : (int8_t)(emulate_depth - 2);
+				if (emulate_depth > 20)  emulate_descend = false;
+				if (emulate_depth<0) emulate_profile = false;
+			}
 			// Sample PPO for drift tracking (every 10 seconds)
 			for (int i = 0; i < (SENSOR_COUNT - 2); i++) {
 				if (sensor_data.s_valid[i]) {

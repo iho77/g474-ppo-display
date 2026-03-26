@@ -104,11 +104,52 @@ uint32_t dive_log_get_count(void);
 uint32_t dive_log_iterate(dive_log_iter_cb cb, void *user_data, uint32_t max_dives);
 
 /**
+ * @brief Callback signature for dive_log_read_samples().
+ *
+ * @param sample_idx  0-based index of this sample within the dive
+ * @param depth_cm    Depth in centimetres
+ * @param timer_sec   Seconds elapsed since dive start
+ * @param ppo0-2      PPO2 readings in mbar
+ * @param bat_pct     Battery percentage
+ * @param temp_c      Temperature in whole degrees Celsius
+ * @param user_data   Caller-supplied context pointer
+ */
+typedef void (*dive_log_sample_cb)(
+    uint32_t sample_idx,
+    uint16_t depth_cm,
+    uint16_t timer_sec,
+    uint16_t ppo0, uint16_t ppo1, uint16_t ppo2,
+    uint8_t  bat_pct,
+    int16_t  temp_c,
+    void    *user_data);
+
+/**
+ * @brief Read individual samples for a specific dive.
+ *
+ * Scans the log for entries belonging to log_id and invokes the callback
+ * for samples in the range [skip, skip+max_count).  Useful for paginated
+ * detail display.
+ *
+ * @note Performs SPI reads proportional to log size.  Call from UI context only.
+ *
+ * @param log_id     Dive sequence number to read samples from.
+ * @param skip       Number of samples to skip (for pagination).
+ * @param max_count  Maximum number of samples to report (0 = all remaining).
+ * @param cb         Callback invoked per sample.
+ * @param user_data  Passed through to the callback.
+ * @return Number of samples reported via the callback.
+ */
+uint32_t dive_log_read_samples(uint32_t log_id, uint32_t skip, uint32_t max_count,
+                                dive_log_sample_cb cb, void *user_data);
+
+/**
  * @brief Factory reset — erase all dive log sectors (metadata + data).
  *
  * @note This operation erases all sectors and takes several seconds.
  *       Only call on explicit user request.
+ * @return true if all sectors erased successfully; false if any sector failed
+ *         (state not reset on failure — caller should report error and retry).
  */
-void dive_log_erase(void);
+bool dive_log_erase(void);
 
 #endif /* DIVE_LOG_H */

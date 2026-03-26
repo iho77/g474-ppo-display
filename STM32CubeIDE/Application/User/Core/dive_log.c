@@ -230,10 +230,18 @@ static bool entry_write(uint8_t type, uint16_t depth_cm, uint16_t timer_sec,
 
 static void recover_write_offset(uint32_t metadata_offset)
 {
+    /* Bound the scan to metadata_offset + (entry_count + 1) entries so that
+     * a corrupt non-blank, non-valid byte cannot force a full ~524K-iteration
+     * scan (~52 s blocking at 100 µs/read).  The +1 covers one entry written
+     * between the last meta_save and the power loss. */
+    uint32_t max_scan_entries = g_dl.entry_count + 1U;
+    uint32_t scan_end = metadata_offset + max_scan_entries * DIVE_LOG_ENTRY_SIZE;
+    if (scan_end > DIVE_LOG_DATA_SIZE) scan_end = DIVE_LOG_DATA_SIZE;
+
     uint8_t type_byte;
     uint32_t off = metadata_offset;
 
-    while (off < DIVE_LOG_DATA_SIZE) {
+    while (off < scan_end) {
         if (w25q128_read(g_dl.hspi, data_off_to_addr(off),
                          &type_byte, 1U) != W25Q128_OK) {
             break;
@@ -291,13 +299,29 @@ bool dive_log_init(SPI_HandleTypeDef *hspi)
 void dive_log_tick_1hz(uint32_t elapsed_sec)
 {
     if (!g_dl.initialized) return;
-    if (!sensor_data.pressure.pressure_valid) return;
 
-    int32_t  depth_mm     = sensor_data.pressure.depth_mm;
+    /* Atomic snapshot of volatile sensor_data — prevents torn reads between
+     * ADC ISR updates and the multi-field access below (critical section < 1 µs) */
+    __disable_irq();
+    bool     snap_p_valid  = sensor_data.pressure.pressure_valid;
+    int32_t  snap_depth_mm = sensor_data.pressure.depth_mm;
+    int32_t  snap_temp_raw = sensor_data.pressure.temperature_c;
+    uint8_t  snap_bat_pct  = sensor_data.battery_percentage;
+    int32_t  snap_ppo[3]   = { sensor_data.o2_s_ppo[0],
+                                sensor_data.o2_s_ppo[1],
+                                sensor_data.o2_s_ppo[2] };
+    bool     snap_valid[3] = { sensor_data.s_valid[0],
+                                sensor_data.s_valid[1],
+                                sensor_data.s_valid[2] };
+    __enable_irq();
+
+    if (!snap_p_valid) return;
+
+    int32_t  depth_mm     = snap_depth_mm;
     uint32_t depth_mm_u   = (depth_mm > 0) ? (uint32_t)depth_mm : 0U;
     uint16_t depth_cm     = (depth_mm_u > 655350U) ? 0xFFFFU : (uint16_t)(depth_mm_u / 10U);
-    int16_t  temperature  = (int16_t)sensor_data.pressure.temperature_c;
-    uint8_t  bat_pct      = sensor_data.battery_percentage;
+    int16_t  temperature  = (int16_t)snap_temp_raw;
+    uint8_t  bat_pct      = snap_bat_pct;
 
     /* ── Execute deferred sector erase when safely at surface ── */
     if (g_dl.pending_erase_addr != 0U && !g_dl.dive_active) {
@@ -309,21 +333,20 @@ void dive_log_tick_1hz(uint32_t elapsed_sec)
 
     /* ── Dive-start detection ── */
     if (!g_dl.dive_active && depth_mm >= DIVE_LOG_START_DEPTH_MM) {
-        /* Snapshot PPO for threshold comparison and START entry */
-        uint16_t snap_ppo[3];
+        /* Build PPO snapshot from already-captured snap_ppo/snap_valid */
+        uint16_t start_ppo[3];
         for (int i = 0; i < 3; i++) {
-            int32_t raw = sensor_data.o2_s_ppo[i];
-            snap_ppo[i] = (sensor_data.s_valid[i] && raw > 0) ? (uint16_t)raw : 0U;
+            start_ppo[i] = (snap_valid[i] && snap_ppo[i] > 0) ? (uint16_t)snap_ppo[i] : 0U;
         }
 
         /* Only commit state changes after the flash write succeeds */
         if (entry_write(DIVE_LOG_ENTRY_TYPE_START, depth_cm, 0U,
-                        snap_ppo, bat_pct, temperature)) {
+                        start_ppo, bat_pct, temperature)) {
             g_dl.log_id++;
             g_dl.dive_start_timer    = elapsed_sec;
             g_dl.surface_sec_counter = 0U;
             g_dl.prev_depth_cm       = depth_cm;
-            for (int i = 0; i < 3; i++) g_dl.prev_ppo[i] = snap_ppo[i];
+            for (int i = 0; i < 3; i++) g_dl.prev_ppo[i] = start_ppo[i];
             g_dl.dive_active         = true;
         }
         return;
@@ -353,9 +376,8 @@ void dive_log_tick_1hz(uint32_t elapsed_sec)
 
     bool ppo_trig = false;
     for (int i = 0; i < 3 && !ppo_trig; i++) {
-        if (!sensor_data.s_valid[i]) continue;
-        int32_t  raw  = sensor_data.o2_s_ppo[i];
-        uint16_t curr = (raw > 0) ? (uint16_t)raw : 0U;
+        if (!snap_valid[i]) continue;
+        uint16_t curr = (snap_ppo[i] > 0) ? (uint16_t)snap_ppo[i] : 0U;
         uint32_t delta = (curr > g_dl.prev_ppo[i])
             ? (uint32_t)(curr - g_dl.prev_ppo[i])
             : (uint32_t)(g_dl.prev_ppo[i] - curr);
@@ -366,13 +388,13 @@ void dive_log_tick_1hz(uint32_t elapsed_sec)
 
     /* ── Write sample ── */
     uint16_t timer_sec = (elapsed_sec >= g_dl.dive_start_timer)
-        ? (uint16_t)((elapsed_sec - g_dl.dive_start_timer) & 0xFFFFU)
+        ? (uint16_t)(elapsed_sec - g_dl.dive_start_timer)  /* truncates at ~18h */
         : 0U;
 
     uint16_t ppo[3] = {
-        (sensor_data.s_valid[0] && sensor_data.o2_s_ppo[0] > 0) ? (uint16_t)sensor_data.o2_s_ppo[0] : 0U,
-        (sensor_data.s_valid[1] && sensor_data.o2_s_ppo[1] > 0) ? (uint16_t)sensor_data.o2_s_ppo[1] : 0U,
-        (sensor_data.s_valid[2] && sensor_data.o2_s_ppo[2] > 0) ? (uint16_t)sensor_data.o2_s_ppo[2] : 0U,
+        (snap_valid[0] && snap_ppo[0] > 0) ? (uint16_t)snap_ppo[0] : 0U,
+        (snap_valid[1] && snap_ppo[1] > 0) ? (uint16_t)snap_ppo[1] : 0U,
+        (snap_valid[2] && snap_ppo[2] > 0) ? (uint16_t)snap_ppo[2] : 0U,
     };
 
     if (entry_write(DIVE_LOG_ENTRY_TYPE_SAMPLE, depth_cm, timer_sec,
@@ -400,7 +422,7 @@ uint32_t dive_log_get_count(void)
 
 uint32_t dive_log_iterate(dive_log_iter_cb cb, void *user_data, uint32_t max_dives)
 {
-    if (!g_dl.initialized || cb == NULL || g_dl.write_offset == 0U) return 0U;
+    if (!g_dl.initialized || cb == NULL || g_dl.entry_count == 0U) return 0U;
 
     uint32_t limit = (max_dives == 0U || max_dives > ITER_CAP) ? ITER_CAP : max_dives;
 
@@ -412,7 +434,7 @@ uint32_t dive_log_iterate(dive_log_iter_cb cb, void *user_data, uint32_t max_div
         uint16_t duration;
     } dive_sum_t;
 
-    static dive_sum_t sums[ITER_CAP];
+    dive_sum_t sums[ITER_CAP];
     uint32_t sum_count = 0U;
 
     uint8_t  buf[DIVE_LOG_ENTRY_SIZE];
@@ -479,33 +501,81 @@ uint32_t dive_log_iterate(dive_log_iter_cb cb, void *user_data, uint32_t max_div
 
     /* Report newest-first up to limit */
     uint32_t report_count = (sum_count < limit) ? sum_count : limit;
-    for (uint32_t i = sum_count; i > sum_count - report_count; i--) {
-        dive_sum_t *s = &sums[i - 1U];
+    for (uint32_t i = 0U; i < report_count; i++) {
+        dive_sum_t *s = &sums[sum_count - 1U - i];
         cb(s->log_id, s->samples, s->max_depth, s->duration, user_data);
     }
     return report_count;
 }
 
 /* ============================================================================
+ * PUBLIC: READ SAMPLES
+ * ========================================================================= */
+
+uint32_t dive_log_read_samples(uint32_t log_id, uint32_t skip, uint32_t max_count,
+                                dive_log_sample_cb cb, void *user_data)
+{
+    if (!g_dl.initialized || cb == NULL) return 0U;
+
+    uint8_t  buf[DIVE_LOG_ENTRY_SIZE];
+    bool     in_target  = false;
+    uint32_t found      = 0U;   /* samples encountered in this dive */
+    uint32_t reported   = 0U;   /* samples passed to callback       */
+
+    for (uint32_t off = 0U; off < g_dl.write_offset; off += DIVE_LOG_ENTRY_SIZE) {
+        if (w25q128_read(g_dl.hspi, data_off_to_addr(off),
+                         buf, DIVE_LOG_ENTRY_SIZE) != W25Q128_OK) break;
+
+        if (buf[0] == DIVE_LOG_ENTRY_TYPE_START) {
+            uint32_t id = get_u32(&buf[4]);
+            if (in_target) break;   /* past the target dive — stop */
+            if (id == log_id) in_target = true;
+
+        } else if (buf[0] == DIVE_LOG_ENTRY_TYPE_SAMPLE && in_target) {
+            if (found >= skip) {
+                if (max_count > 0U && reported >= max_count) break;
+                cb((uint32_t)(found - skip),
+                   get_u16(&buf[8]),
+                   get_u16(&buf[10]),
+                   get_u16(&buf[12]),
+                   get_u16(&buf[14]),
+                   get_u16(&buf[16]),
+                   buf[18],
+                   (int16_t)get_u16(&buf[20]),
+                   user_data);
+                reported++;
+            }
+            found++;
+        }
+    }
+
+    return reported;
+}
+
+/* ============================================================================
  * PUBLIC: ERASE
  * ========================================================================= */
 
-void dive_log_erase(void)
+bool dive_log_erase(void)
 {
-    if (!g_dl.initialized) return;
+    if (!g_dl.initialized) return false;
 
     SPI_HandleTypeDef *hspi = g_dl.hspi;   /* save before memset */
+    bool ok = true;
 
-    w25q128_erase_sector(hspi, DIVE_META_BANK_A);
-    w25q128_erase_sector(hspi, DIVE_META_BANK_B);
+    if (w25q128_erase_sector(hspi, DIVE_META_BANK_A) != W25Q128_OK) ok = false;
+    if (w25q128_erase_sector(hspi, DIVE_META_BANK_B) != W25Q128_OK) ok = false;
 
     for (uint32_t addr = DIVE_LOG_DATA_START;
          addr < DIVE_LOG_DATA_START + DIVE_LOG_DATA_SIZE;
          addr += 4096U) {
-        w25q128_erase_sector(hspi, addr);
+        if (w25q128_erase_sector(hspi, addr) != W25Q128_OK) ok = false;
     }
 
-    memset(&g_dl, 0, sizeof(g_dl));
-    g_dl.hspi        = hspi;
-    g_dl.initialized = true;
+    if (ok) {
+        memset(&g_dl, 0, sizeof(g_dl));
+        g_dl.hspi        = hspi;
+        g_dl.initialized = true;
+    }
+    return ok;
 }

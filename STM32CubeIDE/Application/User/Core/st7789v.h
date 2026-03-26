@@ -14,9 +14,11 @@ extern SPI_HandleTypeDef hspi2;
 
 // ST7789V Commands
 #define ST7789_SWRESET         0x01
+#define ST7789_SLPIN           0x10
 #define ST7789_SLPOUT          0x11
 #define ST7789_NORON           0x13
 #define ST7789_INVOFF          0x20
+#define ST7789_DISPOFF         0x28
 #define ST7789_DISPON          0x29
 #define ST7789_CASET           0x2A
 #define ST7789_RASET           0x2B
@@ -47,6 +49,7 @@ extern SPI_HandleTypeDef hspi2;
 #define COLOR565_BLUE    0x001F
 
 // Function Declarations
+HAL_StatusTypeDef ST7789V_SendCmd(uint8_t cmd, const uint8_t *param, size_t param_size);
 void ST7789V_Init(void);
 void ST7789V_SetWindow(uint16_t xs, uint16_t ys, uint16_t xe, uint16_t ye);
 void ST7789V_Flush_Cb(lv_disp_drv_t *disp_drv, const lv_area_t *area, lv_color_t *color_p);

@@ -88,5 +88,5 @@ void screen_power_off_action(btn_event_t evt) {
     HAL_Delay(500);
 
     // Execute shutdown (implemented in main.c)
-  //  system_shutdown();
+    system_shutdown();
 }

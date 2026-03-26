@@ -134,6 +134,13 @@ void screen_manager_handle_button(btn_event_t evt) {
             screen_settings_on_button(evt);
             break;
 
+        case SCREEN_DIVE_LOG:
+            // Dive log manages its own back navigation (detail->list vs list->menu)
+            if (screen_defs[current_screen].on_action != NULL) {
+                screen_defs[current_screen].on_action(evt);
+            }
+            break;
+
         default:  // Other sub-screens (Sensor Data, etc.)
             if (evt == BTN_M_PRESS) {
                 screen_manager_switch(SCREEN_MENU);  // Back to menu

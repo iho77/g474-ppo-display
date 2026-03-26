@@ -58,6 +58,7 @@ void Error_Handler(void);
 
 /* USER CODE BEGIN EFP */
 extern TIM_HandleTypeDef htim5;  /* VIB_PWM (PA0) — vibro motor */
+void system_shutdown(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/

@@ -458,3 +458,183 @@
 - **Location:** `Core/Src/stm32g4xx_hal_msp.c:115`
 - **Message:** Cyclomatic complexity 17 exceeds threshold 15
 - **Justification:** CubeMX-generated `HAL_ADC_MspInit`. Complexity reflects the number of ADC channels/DMA streams being configured by ST's code generator. Not user-editable.
+
+---
+
+## Suppressed 39
+
+<!-- fingerprint: clang-tidy|STM32CubeIDE/Application/User/Core/dive_log.c|clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling -->
+- **Severity:** HIGH
+- **Tool:** clang-tidy
+- **Check:** `clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling`
+- **Location:** `STM32CubeIDE/Application/User/Core/dive_log.c:109`
+- **Message:** Call to function 'memset' is insecure — replace with 'memset_s'
+- **Justification:** False positive on embedded target. `memset_s` is not available in ARM newlib nano (`--specs=nano.specs`). `memset` with explicit size is the correct safe pattern on this platform. Buffer and size are compile-time paired.
+
+---
+
+## Suppressed 40
+
+<!-- fingerprint: clang-tidy|STM32CubeIDE/Application/User/Core/ext_flash_storage.c|clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling -->
+- **Severity:** HIGH
+- **Tool:** clang-tidy
+- **Check:** `clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling`
+- **Location:** `STM32CubeIDE/Application/User/Core/ext_flash_storage.c:146`
+- **Message:** Call to function 'memset' is insecure — replace with 'memset_s'
+- **Justification:** Same as Suppressed 39 — `memset_s` unavailable in ARM newlib nano. Explicit size argument is the correct embedded pattern.
+
+---
+
+## Suppressed 41
+
+<!-- fingerprint: clang-tidy|STM32CubeIDE/Application/User/Core/screens/screen_calibration.c|clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling -->
+- **Severity:** HIGH
+- **Tool:** clang-tidy
+- **Check:** `clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling`
+- **Location:** `STM32CubeIDE/Application/User/Core/screens/screen_calibration.c:518`
+- **Message:** Call to function 'snprintf' is insecure — replace with 'snprintf_s'
+- **Justification:** Same as Suppressed 6 — `snprintf_s` unavailable in ARM newlib nano. `snprintf` with explicit `sizeof(buf)` bound IS the safe pattern on this platform. Format strings are compile-time constants; no user input.
+
+---
+
+## Suppressed 42
+
+<!-- fingerprint: clang-tidy|STM32CubeIDE/Application/User/Core/screens/screen_dive_log.c|clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling -->
+- **Severity:** HIGH
+- **Tool:** clang-tidy
+- **Check:** `clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling`
+- **Location:** `STM32CubeIDE/Application/User/Core/screens/screen_dive_log.c:133`
+- **Message:** Call to function 'snprintf' is insecure — replace with 'snprintf_s'
+- **Justification:** Same as Suppressed 6.
+
+---
+
+## Suppressed 43
+
+<!-- fingerprint: clang-tidy|STM32CubeIDE/Application/User/Core/screens/screen_sensor_data.c|clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling -->
+- **Severity:** HIGH
+- **Tool:** clang-tidy
+- **Check:** `clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling`
+- **Location:** `STM32CubeIDE/Application/User/Core/screens/screen_sensor_data.c:114`
+- **Message:** Call to function 'snprintf' is insecure — replace with 'snprintf_s'
+- **Justification:** Same as Suppressed 6.
+
+---
+
+## Suppressed 44
+
+<!-- fingerprint: clang-tidy|STM32CubeIDE/Application/User/Core/screens/screen_settings.c|clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling -->
+- **Severity:** HIGH
+- **Tool:** clang-tidy
+- **Check:** `clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling`
+- **Location:** `STM32CubeIDE/Application/User/Core/screens/screen_settings.c:95`
+- **Message:** Call to function 'snprintf' is insecure — replace with 'snprintf_s'
+- **Justification:** Same as Suppressed 6.
+
+---
+
+## Suppressed 45
+
+<!-- fingerprint: clang-tidy|STM32CubeIDE/Application/User/Core/sensor_diagnostics.c|clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling -->
+- **Severity:** HIGH
+- **Tool:** clang-tidy
+- **Check:** `clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling`
+- **Location:** `STM32CubeIDE/Application/User/Core/sensor_diagnostics.c:192`
+- **Message:** Call to function 'memset' is insecure — replace with 'memset_s'
+- **Justification:** Same as Suppressed 39 — `memset_s` unavailable in ARM newlib nano.
+
+---
+
+## Suppressed 46
+
+<!-- fingerprint: clang-tidy|STM32CubeIDE/Application/User/Core/w25q128.c|clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling -->
+- **Severity:** HIGH
+- **Tool:** clang-tidy
+- **Check:** `clang-analyzer-security.insecureAPI.DeprecatedOrUnsafeBufferHandling`
+- **Location:** `STM32CubeIDE/Application/User/Core/w25q128.c:216`
+- **Message:** Call to function 'memset' is insecure — replace with 'memset_s'
+- **Justification:** Same as Suppressed 39 — `memset_s` unavailable in ARM newlib nano.
+
+---
+
+## Suppressed 47
+
+<!-- fingerprint: flawfinder|STM32CubeIDE/Application/User/Core/dive_log.c:133|buffer -->
+- **Severity:** MEDIUM
+- **Tool:** flawfinder
+- **Check:** `buffer`
+- **Location:** `STM32CubeIDE/Application/User/Core/dive_log.c:133:5`
+- **Message:** memcpy — does not check for buffer overflows (CWE-120)
+- **Justification:** `memcpy(tmp, buf, DIVE_LOG_META_ENTRY_SIZE)` — `tmp` is declared `uint8_t tmp[DIVE_LOG_META_ENTRY_SIZE]` and `buf` is the same compile-time-sized parameter. No overflow possible.
+
+---
+
+## Suppressed 48
+
+<!-- fingerprint: flawfinder|STM32CubeIDE/Application/User/Core/screens/screen_dive_log.c:125|buffer -->
+- **Severity:** MEDIUM
+- **Tool:** flawfinder
+- **Check:** `buffer`
+- **Location:** `STM32CubeIDE/Application/User/Core/screens/screen_dive_log.c:125:12`
+- **Message:** char — statically-sized arrays can be improperly restricted (CWE-119/120)
+- **Justification:** Same as Suppressed 30 — static `char` buffer used with `snprintf(buf, sizeof(buf), ...)`. No external input reaches without truncation.
+
+---
+
+## Suppressed 49
+
+<!-- fingerprint: flawfinder|STM32CubeIDE/Application/User/Core/screens/screen_dive_log.c:158|buffer -->
+- **Severity:** MEDIUM
+- **Tool:** flawfinder
+- **Check:** `buffer`
+- **Location:** `STM32CubeIDE/Application/User/Core/screens/screen_dive_log.c:158:12`
+- **Message:** char — statically-sized arrays can be improperly restricted (CWE-119/120)
+- **Justification:** Same as Suppressed 30.
+
+---
+
+## Suppressed 50
+
+<!-- fingerprint: flawfinder|STM32CubeIDE/Application/User/Core/screens/screen_dive_log.c:159|buffer -->
+- **Severity:** MEDIUM
+- **Tool:** flawfinder
+- **Check:** `buffer`
+- **Location:** `STM32CubeIDE/Application/User/Core/screens/screen_dive_log.c:159:12`
+- **Message:** char — statically-sized arrays can be improperly restricted (CWE-119/120)
+- **Justification:** Same as Suppressed 30.
+
+---
+
+## Suppressed 51
+
+<!-- fingerprint: flawfinder|STM32CubeIDE/Application/User/Core/screens/screen_main.c:761|buffer -->
+- **Severity:** MEDIUM
+- **Tool:** flawfinder
+- **Check:** `buffer`
+- **Location:** `STM32CubeIDE/Application/User/Core/screens/screen_main.c:761:9`
+- **Message:** char — statically-sized arrays can be improperly restricted (CWE-119/120)
+- **Justification:** Same as Suppressed 30.
+
+---
+
+## Suppressed 52
+
+<!-- fingerprint: flawfinder|STM32CubeIDE/Application/User/Core/screens/screen_main.c:780|buffer -->
+- **Severity:** MEDIUM
+- **Tool:** flawfinder
+- **Check:** `buffer`
+- **Location:** `STM32CubeIDE/Application/User/Core/screens/screen_main.c:780:9`
+- **Message:** char — statically-sized arrays can be improperly restricted (CWE-119/120)
+- **Justification:** Same as Suppressed 30.
+
+---
+
+## Suppressed 53
+
+<!-- fingerprint: flawfinder|STM32CubeIDE/Application/User/Core/screens/screen_sensor_data.c:111|buffer -->
+- **Severity:** MEDIUM
+- **Tool:** flawfinder
+- **Check:** `buffer`
+- **Location:** `STM32CubeIDE/Application/User/Core/screens/screen_sensor_data.c:111:12`
+- **Message:** char — statically-sized arrays can be improperly restricted (CWE-119/120)
+- **Justification:** Same as Suppressed 30.
