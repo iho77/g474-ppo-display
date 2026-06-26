@@ -203,7 +203,7 @@ void sensor_data_update(sensor_id_t SensorID, uint16_t val) {
 		uint32_t vref_uv = sensor_data.reference_uv;
 		//voltage_uv = adc_to_uV_at_sensor(val, vref_uv, 1);
 		voltage_uv = (uint32_t)__LL_ADC_CALC_DATA_TO_VOLTAGE((int32_t)vref_uv/100, val, LL_ADC_RESOLUTION_12B);
-			sensor_data.battery_voltage_mv = (int32_t)(voltage_uv * 3U); //(int32_t) ((voltage_uv / 100)*3)/2; //using voltage divider 200kO:100kO
+			sensor_data.battery_voltage_mv = (int32_t)((voltage_uv * 3U * BAT_CAL_NUM) / BAT_CAL_DEN);
 			if (sensor_data.battery_voltage_mv <= BAT_MIN_MV) {
 				sensor_data.battery_percentage = 0;
 			} else if (sensor_data.battery_voltage_mv >= BAT_MAX_MV) {

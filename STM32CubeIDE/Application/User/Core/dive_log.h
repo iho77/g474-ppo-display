@@ -88,6 +88,11 @@ void dive_log_tick_1hz(uint32_t elapsed_sec);
 uint32_t dive_log_get_count(void);
 
 /**
+ * @brief Return true while a dive is in progress (depth >= 1 m, not yet surface-timeout).
+ */
+bool dive_log_is_active(void);
+
+/**
  * @brief Iterate through stored dives, reporting a summary for each.
  *
  * Scans the log from oldest to newest.  The callback is invoked for each

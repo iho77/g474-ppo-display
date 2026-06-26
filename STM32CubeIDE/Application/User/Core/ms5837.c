@@ -285,7 +285,7 @@ ms5837_status_t ms5837_calculate(const ms5837_calib_t *calib, uint32_t D1, uint3
 
     // Store results
     data->temperature_c100 = (int32_t)TEMP;  // Temperature in 0.01°C
-    data->pressure_mbar = (int32_t)P;        // Pressure in mbar
+    data->pressure_mbar = (int32_t)P;        // Raw formula output; multiply by 20 to get Pa (= mbar×100)
 
     return MS5837_OK;
 }

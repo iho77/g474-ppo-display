@@ -613,16 +613,15 @@ void screen_main_update(void) {
     if (sensor_data.pressure.pressure_valid) {
         int32_t depth_mm = sensor_data.pressure.depth_mm;
 
-        // Convert mm to meters with 1 decimal place
-        int32_t depth_m = depth_mm / 1000;
-        int32_t depth_dm = (depth_mm % 1000) / 100;
+        // Convert mm to meters with 1 decimal place (work on absolute value to avoid sign artifacts)
+        int32_t abs_mm   = (depth_mm >= 0) ? depth_mm : -depth_mm;
+        int32_t depth_m  = abs_mm / 1000;
+        int32_t depth_dm = (abs_mm % 1000) / 100;
 
-        // Handle negative depth (above sea level / altitude diving)
-        if (depth_m >= 0) {
-            (void)snprintf(buf, sizeof(buf), "%ld.%01ld", (long)depth_m, (long)depth_dm);
+        if (depth_mm < 0) {
+            (void)snprintf(buf, sizeof(buf), "-%ld.%01ld", (long)depth_m, (long)depth_dm);
         } else {
-            // For negative depths, take absolute value for display
-            (void)snprintf(buf, sizeof(buf), "-%ld.%01ld", (long)(-depth_m), (long)(-depth_dm));
+            (void)snprintf(buf, sizeof(buf), "%ld.%01ld", (long)depth_m, (long)depth_dm);
         }
         lv_label_set_text(ui_lblDepthValue, buf);
     } else {

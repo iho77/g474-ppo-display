@@ -413,6 +413,11 @@ uint32_t dive_log_get_count(void)
     return g_dl.log_id;
 }
 
+bool dive_log_is_active(void)
+{
+    return g_dl.dive_active;
+}
+
 /* ============================================================================
  * PUBLIC: ITERATE
  * ========================================================================= */

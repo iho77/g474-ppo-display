@@ -16,9 +16,15 @@
 #include "settings_storage.h"
 #include "pressure_sensor.h"
 
-#define BAT_MIN_MV 2800
+#define BAT_MIN_MV 2500
 #define BAT_MAX_MV 3300
 #define BAT_BASE (BAT_MAX_MV - BAT_MIN_MV)  // Parentheses for macro safety
+
+// Voltage divider calibration: resistor tolerance causes ~6.8% under-read.
+// Measured 3052 mV vs actual 3260 mV → factor 3260/3052 = 1068/1000.
+// Adjust BAT_CAL_NUM after measuring actual vs displayed voltage.
+#define BAT_CAL_NUM 1068U
+#define BAT_CAL_DEN 1000U
 
 // Compile-time safety: Prevent division by zero if BAT_MAX == BAT_MIN
 _Static_assert(BAT_BASE > 0, "BAT_MAX_MV must be greater than BAT_MIN_MV");

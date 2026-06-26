@@ -100,7 +100,7 @@ void pressure_sensor_init(void);
  *
  * @param current_pressure_mbar Current pressure reading (scaled × 100)
  * @param surface_pressure_mbar Surface reference pressure (scaled × 100)
- * @return Depth in millimeters (signed: positive = below surface, negative = above)
+ * @return Depth in millimeters (positive = below surface / diving, negative = above surface reference)
  *
  * @note Result range: ±2,147,483,647 mm (±2,147 km, far exceeds diving depths)
  * @note Max realistic depth: 330 m (33 bar) = 330,000 mm (well within int32_t)

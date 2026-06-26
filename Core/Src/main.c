@@ -114,6 +114,7 @@ uint16_t vrefint_raw_debug = 0;
 static ms5837_calib_t ms5837_calib;  // Factory calibration coefficients
 static ms5837_data_t ms5837_data;    // Latest pressure/temperature measurement
 static volatile bool ms5837_initialized = false;  // Initialization status flag
+static bool ms5837_surface_set = false;           // True after first reading captures actual ambient
 
 /* MS5837 DMA-driven measurement FSM */
 typedef enum {
@@ -398,10 +399,19 @@ static void ms5837_fsm_tick(void)
         case MS5837_FSM_CALCULATE:
             ms5837_calculate(&ms5837_calib, ms5837_raw_D1, ms5837_raw_D2, &ms5837_data);
             {
-                int32_t scaled_p = ms5837_data.pressure_mbar * 100;
+                int32_t scaled_p = ms5837_data.pressure_mbar * 20;
                 /* Four pressure fields written from main-loop context only.
                  * If any field is ever read from ISR, wrap in __disable_irq()/__enable_irq(). */
                 sensor_data.pressure.pressure_mbar = scaled_p;
+                if (!ms5837_surface_set) {
+                    /* Use actual ambient only if plausible surface pressure.
+                     * 108300 Pa = 1083 mbar, highest sea-level pressure ever recorded.
+                     * Anything above means device restarted underwater — keep sea-level default. */
+                    if (scaled_p <= 108300) {
+                        sensor_data.pressure.surface_pressure_mbar = scaled_p;
+                    }
+                    ms5837_surface_set = true;
+                }
                 sensor_data.pressure.temperature_c =
                     (int16_t)(ms5837_data.temperature_c100 / 100);
                 sensor_data.pressure.depth_mm = (!emulate_profile)?
@@ -743,6 +753,13 @@ int main(void)
 							>= BOTTOM_TIMER_START_DEPTH_MM) {
 				g_elapsed_time_sec++;
 			}
+			/* Reset bottom timer when dive ends so next dive starts from 0 */
+			static bool prev_dive_active = false;
+			bool cur_dive_active = dive_log_is_active();
+			if (prev_dive_active && !cur_dive_active) {
+				g_elapsed_time_sec = 0;
+			}
+			prev_dive_active = cur_dive_active;
 			screen_manager_update();
 			dive_log_tick_1hz(g_elapsed_time_sec);
 			/* Auto-shutdown: battery < 10% for 3 consecutive seconds */
